@@ -1,12 +1,11 @@
-import "./Label"
+import "./Label.css"
 
 function Label(props) {
   const {value} = props;
-  console.log(props)
+
   return (
     <label htmlFor="">{value}</label>
   )
 }
 
 export default Label;
-

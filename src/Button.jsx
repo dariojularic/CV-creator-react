@@ -1,8 +1,9 @@
-import "./Button"
+import "./Button.css"
 
-function Button(type) {
+function Button(props) {
+  const {type, value} = props
   return (
-    <button type={type}>Button</button>
+    <button type={type}>{value}</button>
   )
 }
 

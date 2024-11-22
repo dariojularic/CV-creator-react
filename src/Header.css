@@ -1,0 +1,13 @@
+header {
+  background-color: #343a40;
+  color: white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+  padding: 16px;
+  color: #dee2e6;
+}

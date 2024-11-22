@@ -1,9 +1,10 @@
-import "./Input";
+import "./Input.css";
+
 // type, id, name, required, minlegth, maxlength, size, placeholder, autocapitalize
 function Input(props) {
   const {type, placeholder} = props;
   return (
-    <input type={type} placeholder={placeholder}/>
+    <input required={type === "date"} type={type} placeholder={placeholder}/>
   )
 }
 
