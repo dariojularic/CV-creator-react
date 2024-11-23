@@ -1,4 +1,5 @@
 import "./Label.css"
+import PropTypes from "prop-types";
 
 function Label(props) {
   const {value} = props;
@@ -7,5 +8,10 @@ function Label(props) {
     <label htmlFor="">{value}</label>
   )
 }
+
+Label.propTypes = {
+  value: PropTypes.string
+};
+
 
 export default Label;

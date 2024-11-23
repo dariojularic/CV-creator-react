@@ -3,19 +3,26 @@ import './App.css'
 import Header from "./Header"
 import Form from "./Form"
 import initialState from './initial-state'
+import PropTypes from "prop-types";
 
 
 function App() {
   const [cv, setCv] = useState(initialState)
 
-  function handlePreview() {
-    
+  function handleInputChange(event) {
+    const {name, value} = event.target
+    setCv({
+      ...cv,
+      [name]: value
+    })
+    // console.log(event.target)
+    console.log(cv)
   }
 
   return (
     <>
       <Header />
-      <Form />
+      <Form cv={cv} setCv={setCv} />
     </>
   )
 }
