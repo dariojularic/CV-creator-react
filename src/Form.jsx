@@ -2,11 +2,11 @@ import "./Form.css";
 import Input from "./Input";
 import Button from "./Button";
 import PropTypes from "prop-types";
-import initialState from "./initial-state";
+import initialState from './initial-state'
 import { useState } from "react";
 
 function Form() {
-  const [cv, setCv] = useState(initialState);
+  const [cv, setCv] = useState(initialState)
 
   function handlePersonalInfoChange(event) {
     const { name, value } = event.target;
@@ -14,10 +14,11 @@ function Form() {
       ...cv,
       personalInformation: {
         ...cv.personalInformation,
-        [name]: value,
-      },
-    });
-    console.log(cv);
+        [name]: value
+      }
+    })
+    console.log(cv)
+
   }
 
   function handleEducationChange(event) {
@@ -26,10 +27,10 @@ function Form() {
       ...cv,
       education: {
         ...cv.education,
-        [name]: value,
-      },
-    });
-    console.log(cv);
+        [name]: value
+      }
+    })
+    console.log(cv)
   }
 
   function handleExperienceChange(event) {
@@ -38,26 +39,25 @@ function Form() {
       ...cv,
       experience: {
         ...cv.experience,
-        [name]: value,
-      },
-    });
+        [name]: value
+      }
+    })
+
   }
 
   return (
+
     // stavit options u novi file i onda loop
     <form className="form" action="" onChange={handlePersonalInfoChange}>
-      <div
-        className="personal-information input-container"
-        data="personalInformation"
-      >
+      <div className="personal-information input-container" data="personalInformation">
         <h3>Personal Information</h3>
         <Input type="text" placeholder="First Name" name="firstName" />
-        {/* <Input type="text" placeholder="Last Name" name="lastName" />
+        <Input type="text" placeholder="Last Name" name="lastName" />
         <Input type="text" placeholder="Title" name="title" />
         <Input type="text" placeholder="Adress" name="adress" />
         <Input type="text" placeholder="Phone Number" name="phoneNumber" />
         <Input type="text" placeholder="Email" name="email" />
-        <Input type="text" placeholder="About me" name="aboutMe" /> */}
+        <Input type="text" placeholder="About me" name="aboutMe" />
         <Input type="file" placeholder="Photo" name="photo" />
       </div>
 
