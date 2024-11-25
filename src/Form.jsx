@@ -52,12 +52,12 @@ function Form() {
       >
         <h3>Personal Information</h3>
         <Input type="text" placeholder="First Name" name="firstName" />
-        {/* <Input type="text" placeholder="Last Name" name="lastName" />
+        <Input type="text" placeholder="Last Name" name="lastName" />
         <Input type="text" placeholder="Title" name="title" />
         <Input type="text" placeholder="Adress" name="adress" />
         <Input type="text" placeholder="Phone Number" name="phoneNumber" />
         <Input type="text" placeholder="Email" name="email" />
-        <Input type="text" placeholder="About me" name="aboutMe" /> */}
+        <Input type="text" placeholder="About me" name="aboutMe" />
         <Input type="file" placeholder="Photo" name="photo" />
       </div>
 
