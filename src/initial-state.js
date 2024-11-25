@@ -2,14 +2,15 @@ const initialState = {
   personalInformation: {
     firstName: "",
     lastName: "",
-    Title: "",
-    Photo: "",
-    Adress: "",
+    title: "",
+    photo: "",
+    adress: "",
     phoneNumber: "",
     email: "",
     aboutMe: ""
   },
   education: {
+    // array objekata
     universityName: "",
     city: "",
     degree: "",
@@ -25,5 +26,13 @@ const initialState = {
     toDate: "",
   }
 }
+
+// const newInitialState = {
+//   ...initialState,
+//   personalInformation: {
+//     ...initialState.personalInformation,
+//     firstName: "Dario"
+//   }
+// }
 
 export default initialState;

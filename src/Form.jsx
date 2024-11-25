@@ -1,29 +1,56 @@
 import "./Form.css";
-import Label from "./Label";
 import Input from "./Input";
 import Button from "./Button";
 import PropTypes from "prop-types";
+import initialState from './initial-state'
+import { useState } from "react";
 
-function Form(props) {
-  const { cv, setCv } = props;
+function Form() {
+  const [cv, setCv] = useState(initialState)
 
-  function handleInputChange(event) {
+  function handlePersonalInfoChange(event) {
     const { name, value } = event.target;
-    // const section = event.target.closest("div").getAttribute("data")
-
     setCv({
       ...cv,
-      [name]: value,
-    });
-    // console.log(event.target.closest("div").getAttribute("data"))
-    console.log(cv.personalInformation);
+      personalInformation: {
+        ...cv.personalInformation,
+        [name]: value
+      }
+    })
+    console.log(cv)
+
+  }
+
+  function handleEducationChange(event) {
+    const { name, value } = event.target;
+    setCv({
+      ...cv,
+      education: {
+        ...cv.education,
+        [name]: value
+      }
+    })
+    console.log(cv)
+  }
+
+  function handleExperienceChange(event) {
+    const { name, value } = event.target;
+    setCv({
+      ...cv,
+      experience: {
+        ...cv.experience,
+        [name]: value
+      }
+    })
+
   }
 
   return (
-    <form className="form" action="" onChange={handleInputChange}>
+
+    // stavit options u novi file i onda loop
+    <form className="form" action="" onChange={handlePersonalInfoChange}>
       <div className="personal-information input-container" data="personalInformation">
-        {/* <h3>Personal Information</h3> */}
-        <Label value="Personal Information" />
+        <h3>Personal Information</h3>
         <Input type="text" placeholder="First Name" name="firstName" />
         <Input type="text" placeholder="Last Name" name="lastName" />
         <Input type="text" placeholder="Title" name="title" />
@@ -35,8 +62,7 @@ function Form(props) {
       </div>
 
       <div className="education input-container" data="education">
-        <Label value="Education" />
-        {/* <h3>Education</h3> */}
+        <h3>Education</h3>
         <Input
           type="text"
           placeholder="University name"
@@ -52,8 +78,7 @@ function Form(props) {
       </div>
 
       <div className="experience input-container" data="experience">
-        <Label value="Experience" />
-        {/* <h3>Experience</h3> */}
+        <h3>Experience</h3>
         <Input type="text" placeholder="Position" />
         <Input type="text" placeholder="Company" />
         <Input type="text" placeholder="City" />
