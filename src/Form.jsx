@@ -79,50 +79,34 @@ function Form() {
         data="personalInformation"
       >
         <h3>Personal Information</h3>
-        {/* {console.log(initialState.personalInformation)} */}
         {Object.keys(initialState.personalInformation).map((elem) => {
-            const thing = initialState.personalInformation[elem]
-            // console.log("elem", elem);
-            // console.log("keyaa", initialState.personalInformation[elem]);
-            return <Input key={thing} type={thing.meta.type} placeholder={thing.meta.placeholder} onChange={handlePersonalInfoChange} />;
-          }
-          // return (
-          //   <Input
-          //     key={option.id}
-          //     type={option.type}
-          //     placeholder={option.placeholder}
-          //     name={option.name}
-          //     onChange={handlePersonalInfoChange}
-          //   />
-          // );
-        )}
-
-        {/* <Input type="text" placeholder="First Name" name="firstName" />
-        <Input type="text" placeholder="Last Name" name="lastName" />
-        <Input type="text" placeholder="Title" name="title" />
-        <Input type="text" placeholder="Adress" name="adress" />
-        <Input type="text" placeholder="Phone Number" name="phoneNumber" />
-        <Input type="text" placeholder="Email" name="email" />
-        <Input type="text" placeholder="About me" name="aboutMe" />
-        <Input type="file" placeholder="Photo" name="photo" /> */}
+          const thing = initialState.personalInformation[elem];
+          return (
+            <Input
+              key={thing}
+              type={thing.meta.type}
+              placeholder={thing.meta.placeholder}
+              onChange={handlePersonalInfoChange}
+            />
+          );
+        })}
       </div>
 
       <div className="education input-container" data="education">
         <h3>Education</h3>
-        {/* {cv.education.map((option) => {
-          return <Input key={option.id} onChange={handleEducationChange} />;
-        })} */}
 
-        {/* <Input
-          type="text"
-          placeholder="University name"
-          name="universityName"
-        />
-        <Input type="text" placeholder="City" name="city" />
-        <Input type="text" placeholder="Degree" name="degree" />
-        <Input type="text" placeholder="Subject" name="subject" />
-        <Input type="date" placeholder="From (dd/mm/yyyy)" name="fromDate" />
-        <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate" /> */}
+        {Object.keys(initialState.education[0]).map((elem) => {
+          if (elem === "id") return;
+          const thing = initialState.education[0][elem];
+          return (
+            <Input
+              key={thing}
+              placeholder={thing.meta.placeholder}
+              type={thing.meta.type}
+              onChange={handleEducationChange}
+            />
+          );
+        })}
         <Button type="submit" value="Delete" />
         <Button
           type="submit"
@@ -137,22 +121,19 @@ function Form() {
         onChange={handleExperienceChange}
       >
         <h3>Experience</h3>
-        {/* {experienceOptions.map((option) => {
+        {Object.keys(initialState.experience[0]).map((elem) => {
+          if (elem === "id") return;
+          const thing = initialState.experience[0][elem];
           return (
             <Input
-              key={option.id}
-              type={option.type}
-              placeholder={option.placeholder}
-              name={option.name}
+              key={thing}
+              placeholder={thing.meta.placeholder}
+              type={thing.meta.type}
+              onChange={handleExperienceChange}
             />
           );
-        })} */}
+        })}
 
-        {/* <Input type="text" placeholder="Position" name="position" />
-        <Input type="text" placeholder="Company" name="company"/>
-        <Input type="text" placeholder="City" name="city"/>
-        <Input type="date" placeholder="From (dd/mm/yyyy)" name="fromDate"/>
-        <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate"/> */}
         <Button type="submit" value="Delete" />
         <Button
           type="submit"
