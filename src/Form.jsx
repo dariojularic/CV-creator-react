@@ -46,37 +46,18 @@ function Form() {
   }
 
   function handleAddEducation() {
-    const newEducation = initialState.education[0];
-    console.log("newEducation", newEducation);
-    setCv({
-      ...cv,
-      education: [...cv.education, newEducation],
-    });
+    setCv((prev) => ({
+      ...prev,
+      education: [...prev.education, emptyEducation],
+    }));
     console.log(cv);
   }
-
-  // function handleAddExperience() {
-  //   // koristit prev
-  //   const newExperience = initialState.experience[0];
-  //   console.log("newExperience", newExperience);
-  //   setCv({
-  //     ...cv,
-  //     experience: [...cv.experience, newExperience],
-  //   });
-  //   // {experienceOptions.map(option => {
-  //   //   return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
-  //   // })}
-  //   console.log(cv);
-  // }
 
   function handleAddExperience() {
     setCv((prev) => ({
       ...prev,
-      experience: [...prev.experience, emptyExperience]
-    }))
-    // {experienceOptions.map(option => {
-    //   return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
-    // })}
+      experience: [...prev.experience, emptyExperience],
+    }));
     console.log(cv);
   }
 
@@ -106,7 +87,22 @@ function Form() {
       <div className="education input-container" data="education">
         <h3>Education</h3>
 
-        {Object.keys(initialState.education[0]).map((elem) => {
+        {initialState.education.forEach((elem) => {
+          Object.keys(elem).map((element) => {
+            if (element === "id") return;
+            const thing = initialState.education[0][element];
+            return (
+              <Input
+                key={thing}
+                placeholder={thing.meta.placeholder}
+                type={thing.meta.type}
+                onChange={handleEducationChange}
+              />
+            );
+          });
+        })}
+
+        {/* {Object.keys(initialState.education[0]).map((elem) => {
           if (elem === "id") return;
           const thing = initialState.education[0][elem];
           return (
@@ -117,7 +113,8 @@ function Form() {
               onChange={handleEducationChange}
             />
           );
-        })}
+        })} */}
+
         <Button type="submit" value="Delete" />
         <Button
           type="submit"
