@@ -1,3 +1,19 @@
+const emptyEducation = {
+    universityName: {
+      value: "",
+      meta: {
+        placeholder: "University Name",
+        type: "text",
+      }
+    },
+    city: "",
+    degree: "",
+    subject: "",
+    fromDate: "",
+    toDate: "",
+    id: 1,
+}
+
 const initialState = {
   personalInformation: {
     firstName: "",
@@ -10,14 +26,7 @@ const initialState = {
     aboutMe: ""
   },
   education: [
-    {
-      universityName: "",
-      city: "",
-      degree: "",
-      subject: "",
-      fromDate: "",
-      toDate: "",
-    }
+    emptyEducation,
   ],
   experience: [
     {
@@ -26,6 +35,7 @@ const initialState = {
       city: "",
       fromDate: "",
       toDate: "",
+      id: 1
     },
   ]
 }

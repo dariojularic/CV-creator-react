@@ -1,7 +1,8 @@
 import "./Preview.css";
+import ReactDom from "react-dom";
 
 function Preview() {
-  return (
+  return ReactDom.createPortal(
     <>
       <div className="overlay"></div>
       <div className="container">
@@ -16,6 +17,9 @@ function Preview() {
           <h3 className="experience"></h3>
         </main>
       </div>
-    </>
+    </>,
+    document.getElementById("portal")
   );
 }
+
+export default Preview;

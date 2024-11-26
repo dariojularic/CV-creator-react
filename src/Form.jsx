@@ -59,6 +59,7 @@ function Form() {
   }
 
   function handleAddExperience() {
+    // koristit prev
     const newExperience = initialState.experience[0];
     console.log("newExperience", newExperience)
     setCv({
@@ -74,6 +75,8 @@ function Form() {
     console.log(cv)
   }
 
+  // posebne komponente za education, experience i personal Info
+
 
   return (
     <form className="form" action="" >
@@ -84,7 +87,7 @@ function Form() {
       >
         <h3>Personal Information</h3>
         {personalInformationOptions.map(option => {
-          return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
+          return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name} onChange={handlePersonalInfoChange} />
         })}
 
         {/* <Input type="text" placeholder="First Name" name="firstName" />
@@ -97,10 +100,10 @@ function Form() {
         <Input type="file" placeholder="Photo" name="photo" /> */}
       </div>
 
-      <div className="education input-container" data="education" onChange={handleEducationChange}>
+      <div className="education input-container" data="education" >
         <h3>Education</h3>
-        {educationOptions.map(option => {
-          return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
+        {cv.education.map(option => {
+          return <Input key={option.id} onChange={handleEducationChange}/>
         })}
 
         {/* <Input
