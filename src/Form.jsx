@@ -18,7 +18,7 @@ function Form() {
         [name]: value,
       },
     });
-    console.log(cv);
+    // console.log(cv);
   }
 
   function handleEducationChange(event) {
@@ -30,7 +30,7 @@ function Form() {
         [name]: value,
       },
     });
-    console.log(cv);
+    // console.log(cv);
   }
 
   function handleExperienceChange(event) {
@@ -42,8 +42,38 @@ function Form() {
         [name]: value,
       },
     });
-    console.log(cv);
+    // console.log(cv);
   }
+
+  function handleAddEducation() {
+    const newEducation = initialState.education[0];
+    console.log("newEducation", newEducation)
+    setCv({
+      ...cv,
+      education: [
+        ...cv.education,
+        newEducation
+      ]
+    })
+    console.log(cv)
+  }
+
+  function handleAddExperience() {
+    const newExperience = initialState.experience[0];
+    console.log("newExperience", newExperience)
+    setCv({
+      ...cv,
+      experience: [
+        ...cv.experience,
+        newExperience
+      ]
+    })
+    // {experienceOptions.map(option => {
+    //   return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
+    // })}
+    console.log(cv)
+  }
+
 
   return (
     <form className="form" action="" >
@@ -56,7 +86,6 @@ function Form() {
         {personalInformationOptions.map(option => {
           return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
         })}
-
 
         {/* <Input type="text" placeholder="First Name" name="firstName" />
         <Input type="text" placeholder="Last Name" name="lastName" />
@@ -85,7 +114,7 @@ function Form() {
         <Input type="date" placeholder="From (dd/mm/yyyy)" name="fromDate" />
         <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate" /> */}
         <Button type="submit" value="Delete" />
-        <Button type="submit" value="Add Education" />
+        <Button type="submit" value="Add Education" handleClick={handleAddEducation}/>
       </div>
 
       <div className="experience input-container" data="experience" onChange={handleExperienceChange}>
@@ -93,13 +122,14 @@ function Form() {
         {experienceOptions.map(option => {
           return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
         })}
+
         {/* <Input type="text" placeholder="Position" name="position" />
         <Input type="text" placeholder="Company" name="company"/>
         <Input type="text" placeholder="City" name="city"/>
         <Input type="date" placeholder="From (dd/mm/yyyy)" name="fromDate"/>
         <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate"/> */}
         <Button type="submit" value="Delete" />
-        <Button type="submit" value="Add Experience" />
+        <Button type="submit" value="Add Experience" handleClick={handleAddExperience} />
       </div>
 
       <div className="submit-btns">

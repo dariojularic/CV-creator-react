@@ -3,15 +3,16 @@ import PropTypes from "prop-types";
 
 
 function Button(props) {
-  const {type, value} = props
+  const {type, value, handleClick} = props
   return (
-    <button type={type}>{value}</button>
+    <button type={type} onClick={handleClick}>{value}</button>
   )
 }
 
 Button.propTypes = {
   type: PropTypes.string,
-  value: PropTypes.string
+  value: PropTypes.string,
+  handleClick: PropTypes.func
 };
 
 

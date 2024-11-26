@@ -9,22 +9,26 @@ const initialState = {
     email: "",
     aboutMe: ""
   },
-  education: {
-    // array objekata
-    universityName: "",
-    city: "",
-    degree: "",
-    subject: "",
-    fromDate: "",
-    toDate: "",
-  },
-  experience: {
-    position: "",
-    company: "",
-    city: "",
-    fromDate: "",
-    toDate: "",
-  }
+  education: [
+    {
+      // array objekata
+      universityName: "",
+      city: "",
+      degree: "",
+      subject: "",
+      fromDate: "",
+      toDate: "",
+    }
+  ],
+  experience: [
+    {
+      position: "",
+      company: "",
+      city: "",
+      fromDate: "",
+      toDate: "",
+    },
+  ]
 }
 
 // const newInitialState = {
