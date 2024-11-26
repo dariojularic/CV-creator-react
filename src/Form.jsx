@@ -2,9 +2,9 @@ import "./Form.css";
 import Input from "./Input";
 import Button from "./Button";
 import PropTypes from "prop-types";
-import initialState from "./initial-state";
+import { initialState, emptyEducation, emptyExperience } from "./initial-state";
 import { useState } from "react";
-import { personalInformationOptions, educationOptions, experienceOptions } from "./options";
+// import { personalInformationOptions, educationOptions, experienceOptions } from "./options";
 
 function Form() {
   const [cv, setCv] = useState(initialState);
@@ -47,47 +47,48 @@ function Form() {
 
   function handleAddEducation() {
     const newEducation = initialState.education[0];
-    console.log("newEducation", newEducation)
+    console.log("newEducation", newEducation);
     setCv({
       ...cv,
-      education: [
-        ...cv.education,
-        newEducation
-      ]
-    })
-    console.log(cv)
+      education: [...cv.education, newEducation],
+    });
+    console.log(cv);
   }
 
   function handleAddExperience() {
     // koristit prev
     const newExperience = initialState.experience[0];
-    console.log("newExperience", newExperience)
+    console.log("newExperience", newExperience);
     setCv({
       ...cv,
-      experience: [
-        ...cv.experience,
-        newExperience
-      ]
-    })
+      experience: [...cv.experience, newExperience],
+    });
     // {experienceOptions.map(option => {
     //   return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
     // })}
-    console.log(cv)
+    console.log(cv);
   }
 
   // posebne komponente za education, experience i personal Info
 
-
   return (
-    <form className="form" action="" >
+    <form className="form" action="">
       <div
         onChange={handlePersonalInfoChange}
         className="personal-information input-container"
         data="personalInformation"
       >
         <h3>Personal Information</h3>
-        {personalInformationOptions.map(option => {
-          return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name} onChange={handlePersonalInfoChange} />
+        {personalInformationOptions.map((option) => {
+          return (
+            <Input
+              key={option.id}
+              type={option.type}
+              placeholder={option.placeholder}
+              name={option.name}
+              onChange={handlePersonalInfoChange}
+            />
+          );
         })}
 
         {/* <Input type="text" placeholder="First Name" name="firstName" />
@@ -100,10 +101,10 @@ function Form() {
         <Input type="file" placeholder="Photo" name="photo" /> */}
       </div>
 
-      <div className="education input-container" data="education" >
+      <div className="education input-container" data="education">
         <h3>Education</h3>
-        {cv.education.map(option => {
-          return <Input key={option.id} onChange={handleEducationChange}/>
+        {cv.education.map((option) => {
+          return <Input key={option.id} onChange={handleEducationChange} />;
         })}
 
         {/* <Input
@@ -117,13 +118,28 @@ function Form() {
         <Input type="date" placeholder="From (dd/mm/yyyy)" name="fromDate" />
         <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate" /> */}
         <Button type="submit" value="Delete" />
-        <Button type="submit" value="Add Education" handleClick={handleAddEducation}/>
+        <Button
+          type="submit"
+          value="Add Education"
+          handleClick={handleAddEducation}
+        />
       </div>
 
-      <div className="experience input-container" data="experience" onChange={handleExperienceChange}>
+      <div
+        className="experience input-container"
+        data="experience"
+        onChange={handleExperienceChange}
+      >
         <h3>Experience</h3>
-        {experienceOptions.map(option => {
-          return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
+        {experienceOptions.map((option) => {
+          return (
+            <Input
+              key={option.id}
+              type={option.type}
+              placeholder={option.placeholder}
+              name={option.name}
+            />
+          );
         })}
 
         {/* <Input type="text" placeholder="Position" name="position" />
@@ -132,7 +148,11 @@ function Form() {
         <Input type="date" placeholder="From (dd/mm/yyyy)" name="fromDate"/>
         <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate"/> */}
         <Button type="submit" value="Delete" />
-        <Button type="submit" value="Add Experience" handleClick={handleAddExperience} />
+        <Button
+          type="submit"
+          value="Add Experience"
+          handleClick={handleAddExperience}
+        />
       </div>
 
       <div className="submit-btns">
