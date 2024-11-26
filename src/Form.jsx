@@ -79,17 +79,23 @@ function Form() {
         data="personalInformation"
       >
         <h3>Personal Information</h3>
-        {personalInformationOptions.map((option) => {
-          return (
-            <Input
-              key={option.id}
-              type={option.type}
-              placeholder={option.placeholder}
-              name={option.name}
-              onChange={handlePersonalInfoChange}
-            />
-          );
-        })}
+        {/* {console.log(initialState.personalInformation)} */}
+        {Object.keys(initialState.personalInformation).map((elem) => {
+            const thing = initialState.personalInformation[elem]
+            // console.log("elem", elem);
+            // console.log("keyaa", initialState.personalInformation[elem]);
+            return <Input key={thing} type={thing.meta.type} placeholder={thing.meta.placeholder} onChange={handlePersonalInfoChange} />;
+          }
+          // return (
+          //   <Input
+          //     key={option.id}
+          //     type={option.type}
+          //     placeholder={option.placeholder}
+          //     name={option.name}
+          //     onChange={handlePersonalInfoChange}
+          //   />
+          // );
+        )}
 
         {/* <Input type="text" placeholder="First Name" name="firstName" />
         <Input type="text" placeholder="Last Name" name="lastName" />
@@ -103,9 +109,9 @@ function Form() {
 
       <div className="education input-container" data="education">
         <h3>Education</h3>
-        {cv.education.map((option) => {
+        {/* {cv.education.map((option) => {
           return <Input key={option.id} onChange={handleEducationChange} />;
-        })}
+        })} */}
 
         {/* <Input
           type="text"
@@ -131,7 +137,7 @@ function Form() {
         onChange={handleExperienceChange}
       >
         <h3>Experience</h3>
-        {experienceOptions.map((option) => {
+        {/* {experienceOptions.map((option) => {
           return (
             <Input
               key={option.id}
@@ -140,7 +146,7 @@ function Form() {
               name={option.name}
             />
           );
-        })}
+        })} */}
 
         {/* <Input type="text" placeholder="Position" name="position" />
         <Input type="text" placeholder="Company" name="company"/>
