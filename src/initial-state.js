@@ -11,7 +11,6 @@ const initialState = {
   },
   education: [
     {
-      // array objekata
       universityName: "",
       city: "",
       degree: "",
