@@ -55,14 +55,25 @@ function Form() {
     console.log(cv);
   }
 
+  // function handleAddExperience() {
+  //   // koristit prev
+  //   const newExperience = initialState.experience[0];
+  //   console.log("newExperience", newExperience);
+  //   setCv({
+  //     ...cv,
+  //     experience: [...cv.experience, newExperience],
+  //   });
+  //   // {experienceOptions.map(option => {
+  //   //   return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
+  //   // })}
+  //   console.log(cv);
+  // }
+
   function handleAddExperience() {
-    // koristit prev
-    const newExperience = initialState.experience[0];
-    console.log("newExperience", newExperience);
-    setCv({
-      ...cv,
-      experience: [...cv.experience, newExperience],
-    });
+    setCv((prev) => ({
+      ...prev,
+      experience: [...prev.experience, emptyExperience]
+    }))
     // {experienceOptions.map(option => {
     //   return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
     // })}
