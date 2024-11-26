@@ -2,42 +2,50 @@ const personalInformationOptions = [
   {
     type: "text",
     placeholder: "First Name",
-    name: "firstName"
+    name: "firstName",
+    id: 1
   },
   {
     type: "text",
     placeholder: "Last Name",
-    name: "lastName"
+    name: "lastName",
+    id: 2
   },
   {
     type: "text",
     placeholder: "Title",
-    name: "title"
+    name: "title",
+    id: 3
   },
   {
     type: "text",
     placeholder: "Adress",
-    name: "adress"
+    name: "adress",
+    id: 4
   },
   {
     type: "text",
     placeholder: "Phone Number",
-    name: "phoneNumber"
+    name: "phoneNumber",
+    id: 5
   },
   {
     type: "text",
     placeholder: "Email",
-    name: "email"
+    name: "email",
+    id: 6
   },
   {
     type: "text",
     placeholder: "About me",
-    name: "aboutMe"
+    name: "aboutMe",
+    id: 7
   },
   {
     type: "file",
     placeholder: "Photo",
-    name: "photo"
+    name: "photo",
+    id: 8
   }
 ]
 
@@ -45,27 +53,32 @@ const educationOptions = [
   {
     type: "text",
     placeholder: "City",
-    name: "city"
+    name: "city",
+    id: 1
   },
   {
     type: "text",
     placeholder: "Degree",
-    name: "degree"
+    name: "degree",
+    id: 2
   },
   {
     type: "text",
     placeholder: "Subject",
-    name: "subject"
+    name: "subject",
+    id: 3
   },
   {
     type: "date",
     placeholder: "From",
-    name: "fromDate"
+    name: "fromDate",
+    id: 4
   },
   {
     type: "date",
     placeholder: "To",
-    name: "toDate"
+    name: "toDate",
+    id: 5
   }
 ]
 
@@ -73,27 +86,32 @@ const experienceOptions = [
   {
     type: "text",
     placeholder: "Position",
-    name: "position"
+    name: "position",
+    id: 1
   },
   {
     type: "text",
     placeholder: "Company",
-    name: "company"
+    name: "company",
+    id: 2
   },
   {
     type: "text",
     placeholder: "City",
-    name: "city"
+    name: "city",
+    id: 3
   },
   {
     type: "date",
     placeholder: "From",
-    name: "fromDate"
+    name: "fromDate",
+    id: 4
   },
   {
     type: "date",
     placeholder: "To",
-    name: "toDate"
+    name: "toDate",
+    id: 5
   }
 ]
 

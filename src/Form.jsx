@@ -4,6 +4,7 @@ import Button from "./Button";
 import PropTypes from "prop-types";
 import initialState from "./initial-state";
 import { useState } from "react";
+import { personalInformationOptions, educationOptions, experienceOptions } from "./options";
 
 function Form() {
   const [cv, setCv] = useState(initialState);
@@ -45,7 +46,6 @@ function Form() {
   }
 
   return (
-    // stavit options u novi file i onda loop
     <form className="form" action="" >
       <div
         onChange={handlePersonalInfoChange}
@@ -53,19 +53,28 @@ function Form() {
         data="personalInformation"
       >
         <h3>Personal Information</h3>
-        <Input type="text" placeholder="First Name" name="firstName" />
+        {personalInformationOptions.map(option => {
+          return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
+        })}
+
+
+        {/* <Input type="text" placeholder="First Name" name="firstName" />
         <Input type="text" placeholder="Last Name" name="lastName" />
         <Input type="text" placeholder="Title" name="title" />
         <Input type="text" placeholder="Adress" name="adress" />
         <Input type="text" placeholder="Phone Number" name="phoneNumber" />
         <Input type="text" placeholder="Email" name="email" />
         <Input type="text" placeholder="About me" name="aboutMe" />
-        <Input type="file" placeholder="Photo" name="photo" />
+        <Input type="file" placeholder="Photo" name="photo" /> */}
       </div>
 
       <div className="education input-container" data="education" onChange={handleEducationChange}>
         <h3>Education</h3>
-        <Input
+        {educationOptions.map(option => {
+          return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
+        })}
+
+        {/* <Input
           type="text"
           placeholder="University name"
           name="universityName"
@@ -74,18 +83,21 @@ function Form() {
         <Input type="text" placeholder="Degree" name="degree" />
         <Input type="text" placeholder="Subject" name="subject" />
         <Input type="date" placeholder="From (dd/mm/yyyy)" name="fromDate" />
-        <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate" />
+        <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate" /> */}
         <Button type="submit" value="Delete" />
         <Button type="submit" value="Add Education" />
       </div>
 
       <div className="experience input-container" data="experience" onChange={handleExperienceChange}>
         <h3>Experience</h3>
-        <Input type="text" placeholder="Position" name="position" />
+        {experienceOptions.map(option => {
+          return <Input key={option.id} type={option.type} placeholder={option.placeholder} name={option.name}/>
+        })}
+        {/* <Input type="text" placeholder="Position" name="position" />
         <Input type="text" placeholder="Company" name="company"/>
         <Input type="text" placeholder="City" name="city"/>
         <Input type="date" placeholder="From (dd/mm/yyyy)" name="fromDate"/>
-        <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate"/>
+        <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate"/> */}
         <Button type="submit" value="Delete" />
         <Button type="submit" value="Add Experience" />
       </div>
