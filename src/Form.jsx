@@ -41,12 +41,14 @@ function Form() {
         [name]: value,
       },
     });
+    console.log(cv);
   }
 
   return (
     // stavit options u novi file i onda loop
-    <form className="form" action="" onChange={handlePersonalInfoChange}>
+    <form className="form" action="" >
       <div
+        onChange={handlePersonalInfoChange}
         className="personal-information input-container"
         data="personalInformation"
       >
@@ -61,7 +63,7 @@ function Form() {
         <Input type="file" placeholder="Photo" name="photo" />
       </div>
 
-      <div className="education input-container" data="education">
+      <div className="education input-container" data="education" onChange={handleEducationChange}>
         <h3>Education</h3>
         <Input
           type="text"
@@ -77,13 +79,13 @@ function Form() {
         <Button type="submit" value="Add Education" />
       </div>
 
-      <div className="experience input-container" data="experience">
+      <div className="experience input-container" data="experience" onChange={handleExperienceChange}>
         <h3>Experience</h3>
-        <Input type="text" placeholder="Position" />
-        <Input type="text" placeholder="Company" />
-        <Input type="text" placeholder="City" />
-        <Input type="date" placeholder="From (dd/mm/yyyy)" />
-        <Input type="date" placeholder="To (dd/mm/yyyy)" />
+        <Input type="text" placeholder="Position" name="position" />
+        <Input type="text" placeholder="Company" name="company"/>
+        <Input type="text" placeholder="City" name="city"/>
+        <Input type="date" placeholder="From (dd/mm/yyyy)" name="fromDate"/>
+        <Input type="date" placeholder="To (dd/mm/yyyy)" name="toDate"/>
         <Button type="submit" value="Delete" />
         <Button type="submit" value="Add Experience" />
       </div>
