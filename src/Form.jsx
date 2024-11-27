@@ -2,6 +2,8 @@ import "./Form.css";
 import Input from "./Input";
 import Button from "./Button";
 import PropTypes from "prop-types";
+import Education from "./Education";
+import Experience from "./Experience";
 import { initialState, emptyEducation, emptyExperience } from "./initial-state";
 import { useState } from "react";
 // import { personalInformationOptions, educationOptions, experienceOptions } from "./options";
@@ -23,6 +25,8 @@ function Form() {
 
   function handleEducationChange(event) {
     const { name, value } = event.target;
+    console.log(event.target)
+
     setCv({
       ...cv,
       education: {
@@ -35,6 +39,7 @@ function Form() {
 
   function handleExperienceChange(event) {
     const { name, value } = event.target;
+    console.log(event.target)
     setCv({
       ...cv,
       experience: {
@@ -42,7 +47,7 @@ function Form() {
         [name]: value,
       },
     });
-    // console.log(cv);
+    console.log(cv);
   }
 
   function handleAddEducation() {
@@ -73,9 +78,10 @@ function Form() {
         <h3>Personal Information</h3>
         {Object.keys(initialState.personalInformation).map((elem) => {
           const thing = initialState.personalInformation[elem];
+          // console.log(thing)
           return (
             <Input
-              key={thing}
+              key={crypto.randomUUID()}
               type={thing.meta.type}
               placeholder={thing.meta.placeholder}
               onChange={handlePersonalInfoChange}
@@ -87,33 +93,36 @@ function Form() {
       <div className="education input-container" data="education">
         <h3>Education</h3>
 
-        {initialState.education.forEach((elem) => {
+        {/* {initialState.education.forEach((elem) => {
           Object.keys(elem).map((element) => {
             if (element === "id") return;
-            const thing = initialState.education[0][element];
+            const obj = initialState.education[0][element];
+            console.log(obj)
             return (
               <Input
-                key={thing}
-                placeholder={thing.meta.placeholder}
-                type={thing.meta.type}
+                key={crypto.randomUUID()}
+                placeholder={obj.meta.placeholder}
+                type={obj.meta.type}
                 onChange={handleEducationChange}
               />
             );
           });
-        })}
+        })} */}
 
-        {/* {Object.keys(initialState.education[0]).map((elem) => {
+        {/* <Education handleEducationChange={handleEducationChange} /> */}
+
+        {Object.keys(initialState.education[0]).map((elem) => {
           if (elem === "id") return;
-          const thing = initialState.education[0][elem];
+          const obj = initialState.education[0][elem];
           return (
             <Input
-              key={thing}
-              placeholder={thing.meta.placeholder}
-              type={thing.meta.type}
+              key={crypto.randomUUID()}
+              placeholder={obj.meta.placeholder}
+              type={obj.meta.type}
               onChange={handleEducationChange}
             />
           );
-        })} */}
+        })}
 
         <Button type="submit" value="Delete" />
         <Button
@@ -134,7 +143,7 @@ function Form() {
           const thing = initialState.experience[0][elem];
           return (
             <Input
-              key={thing}
+              key={crypto.randomUUID()}
               placeholder={thing.meta.placeholder}
               type={thing.meta.type}
               onChange={handleExperienceChange}
