@@ -4,42 +4,53 @@ import Button from "./Button";
 import PropTypes from "prop-types";
 import Education from "./Education";
 import Experience from "./Experience";
+import PersonalInformation from "./PersonalInformation"
 import { initialState, emptyEducation, emptyExperience } from "./initial-state";
 import { useState } from "react";
 // import { personalInformationOptions, educationOptions, experienceOptions } from "./options";
+
+// zavrsi personalInfo komponentu
+// handleEducationChange
+// handleExperienceChange
 
 function Form() {
   const [cv, setCv] = useState(initialState);
 
   function handlePersonalInfoChange(event) {
     const { name, value } = event.target;
-    setCv({
-      ...cv,
-      personalInformation: {
-        ...cv.personalInformation,
-        [name]: value,
-      },
+
+    setCv((prev) => {
+      return {
+        ...prev,
+        personalInformation: {
+          ...prev.personalInformation,
+          [name]: {
+            ...cv.personalInformation[name],
+            value: value,
+          },
+        },
+      };
     });
-    // console.log(cv);
+    console.log(cv);
   }
 
+  // jel mi treba tu id argument?
   function handleEducationChange(event) {
     const { name, value } = event.target;
-    console.log(event.target)
-
-    setCv({
-      ...cv,
-      education: {
-        ...cv.education,
-        [name]: value,
-      },
+    console.log(name);
+    console.log(value);
+    setCv((prev) => {
+      return {
+        ...prev,
+        education: [...prev.education],
+      };
     });
-    // console.log(cv);
+    console.log(cv);
   }
 
   function handleExperienceChange(event) {
     const { name, value } = event.target;
-    console.log(event.target)
+    console.log(event.target);
     setCv({
       ...cv,
       experience: {
@@ -70,13 +81,14 @@ function Form() {
 
   return (
     <form className="form" action="">
-      <div
-        onChange={handlePersonalInfoChange}
-        className="personal-information input-container"
-        data="personalInformation"
-      >
+      <div className="personal-information input-container">
         <h3>Personal Information</h3>
-        {Object.keys(initialState.personalInformation).map((elem) => {
+        {/* {cv.personalInformation.forEach((key, value) => {
+          console.log(key)
+          console.log(value)
+        })} */}
+
+        {/* {Object.keys(initialState.personalInformation).map((elem) => {
           const thing = initialState.personalInformation[elem];
           // console.log(thing)
           return (
@@ -87,10 +99,23 @@ function Form() {
               onChange={handlePersonalInfoChange}
             />
           );
-        })}
+        })} */}
+
+        <div className="personal-info">
+          <PersonalInformation personalInfo={cv.personalInformation} />
+          <input
+            type={cv.personalInformation.firstName.meta.type}
+            name={cv.personalInformation.firstName.meta.name}
+            value={cv.personalInformation.firstName.value}
+            onChange={handlePersonalInfoChange}
+          />
+        </div>
       </div>
 
-      <div className="education input-container" data="education">
+      <div
+        className="education input-container"
+        onChange={handleEducationChange}
+      >
         <h3>Education</h3>
 
         {/* {initialState.education.forEach((elem) => {
@@ -119,7 +144,8 @@ function Form() {
               key={crypto.randomUUID()}
               placeholder={obj.meta.placeholder}
               type={obj.meta.type}
-              onChange={handleEducationChange}
+              name={obj.meta.name}
+              handleChange={handleEducationChange}
             />
           );
         })}

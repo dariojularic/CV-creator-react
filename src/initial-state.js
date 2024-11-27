@@ -4,6 +4,7 @@ const emptyEducation = {
       meta: {
         placeholder: "University Name",
         type: "text",
+        name: "universityName"
       }
     },
     city: {
@@ -11,6 +12,7 @@ const emptyEducation = {
       meta: {
         placeholder: "City",
         type: "text",
+        name: "city"
       }
     },
     degree: {
@@ -18,6 +20,7 @@ const emptyEducation = {
       meta: {
         placeholder: "Degree",
         type: "text",
+        name: "degree"
       }
     },
     subject: {
@@ -25,6 +28,7 @@ const emptyEducation = {
       meta: {
         placeholder: "Subject",
         type: "text",
+        name: "subject"
       }
     },
     fromDate: {
@@ -32,6 +36,7 @@ const emptyEducation = {
       meta: {
         placeholder: "From",
         type: "date",
+        name: "fromDate"
       }
     },
     toDate: {
@@ -39,10 +44,12 @@ const emptyEducation = {
       meta: {
         placeholder: "To",
         type: "date",
+        name: "toDate"
       }
     },
     id: crypto.randomUUID,
-}
+  }
+
 
 const emptyExperience = {
   position: {
@@ -50,6 +57,7 @@ const emptyExperience = {
     meta: {
       placeholder: "Position",
       type: "text",
+      name: "position"
     }
   },
   company: {
@@ -57,6 +65,7 @@ const emptyExperience = {
     meta: {
       placeholder: "Company",
       type: "text",
+      name: "company"
     }
   },
   city: {
@@ -64,6 +73,7 @@ const emptyExperience = {
     meta: {
       placeholder: "City",
       type: "text",
+      name: "city"
     }
   },
   fromDate: {
@@ -71,6 +81,7 @@ const emptyExperience = {
     meta: {
       placeholder: "From",
       type: "date",
+      name: "fromDate"
     }
   },
   toDate: {
@@ -78,6 +89,7 @@ const emptyExperience = {
     meta: {
       placeholder: "To",
       type: "date",
+      name: "toDate"
     }
   },
   id: crypto.randomUUID
@@ -90,6 +102,7 @@ const initialState = {
       meta: {
         placeholder: "First Name",
         type: "text",
+        name: "firstName"
       }
     },
     lastName: {
@@ -97,6 +110,7 @@ const initialState = {
       meta: {
         placeholder: "Last Name",
         type: "text",
+        name: "lastName"
       }
     },
     title: {
@@ -104,6 +118,7 @@ const initialState = {
       meta: {
         placeholder: "Title",
         type: "text",
+        name: "title"
       }
     },
     photo: {
@@ -111,6 +126,7 @@ const initialState = {
       meta: {
         placeholder: "Photo",
         type: "text",
+        name: "photo"
       }
     },
     adress: {
@@ -118,6 +134,7 @@ const initialState = {
       meta: {
         placeholder: "Adress",
         type: "text",
+        name: "adress"
       }
     },
     phoneNumber: {
@@ -125,6 +142,7 @@ const initialState = {
       meta: {
         placeholder: "Phone Number",
         type: "text",
+        name: "phoneNumber"
       }
     },
     email: {
@@ -132,6 +150,7 @@ const initialState = {
       meta: {
         placeholder: "Email",
         type: "text",
+        name: "email"
       }
     },
     aboutMe: {
@@ -139,6 +158,7 @@ const initialState = {
       meta: {
         placeholder: "About me",
         type: "text",
+        name: "aboutMe"
       }
     }
   },
