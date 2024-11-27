@@ -7,13 +7,13 @@ function PersonalInformation(props) {
 
   return (
     <div className="personal-info">
-      {/* <Input />
       <Input />
       <Input />
       <Input />
       <Input />
       <Input />
-      <Input /> */}
+      <Input />
+      <Input />
     </div>
   );
 }
