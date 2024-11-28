@@ -36,22 +36,22 @@ function Form() {
   }
 
   // jel mi treba tu id argument?
-  // function handleEducationChange(event) {
-  //   const { name, value } = event.target;
-  //   // console.log(name);
-  //   // console.log(value);
-  //   setCv((prev) => {
-  //     return {
-  //       ...prev,
-  //       education: [...prev.education],
-  //       [name]: {
-  //         ...prev.education[name],
-  //         value: value,
-  //       },
-  //     };
-  //   });
-  //   console.log(cv);
-  // }
+  function handleEducationChange(event) {
+    const { name, value } = event.target;
+    // console.log(name);
+    // console.log(value);
+    setCv((prev) => {
+      return {
+        ...prev,
+        education: [...prev.education],
+        [name]: {
+          ...prev.education[name],
+          value: value,
+        },
+      };
+    });
+    console.log(cv);
+  }
 
   function handleExperienceChange(event) {
     const { name, value } = event.target;
