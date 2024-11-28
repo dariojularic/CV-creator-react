@@ -4,7 +4,7 @@ import Button from "./Button";
 import PropTypes from "prop-types";
 import Education from "./Education";
 import Experience from "./Experience";
-import PersonalInformation from "./PersonalInformation"
+import PersonalInformation from "./PersonalInformation";
 import { initialState, emptyEducation, emptyExperience } from "./initial-state";
 import { useState } from "react";
 // import { personalInformationOptions, educationOptions, experienceOptions } from "./options";
@@ -18,6 +18,7 @@ function Form() {
 
   function handlePersonalInfoChange(event) {
     const { name, value } = event.target;
+    console.log("fafa");
 
     setCv((prev) => {
       return {
@@ -37,12 +38,16 @@ function Form() {
   // jel mi treba tu id argument?
   function handleEducationChange(event) {
     const { name, value } = event.target;
-    console.log(name);
-    console.log(value);
+    // console.log(name);
+    // console.log(value);
     setCv((prev) => {
       return {
         ...prev,
         education: [...prev.education],
+        [name]: {
+          ...prev.education[name],
+          value: value,
+        },
       };
     });
     console.log(cv);
@@ -102,7 +107,11 @@ function Form() {
         })} */}
 
         <div className="personal-info">
-          <PersonalInformation personalInfo={cv.personalInformation} />
+          <PersonalInformation
+            personalInfo={cv.personalInformation}
+            // funkcija ne radi
+            handleChange={handlePersonalInfoChange}
+          />
           <input
             type={cv.personalInformation.firstName.meta.type}
             name={cv.personalInformation.firstName.meta.name}
