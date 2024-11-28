@@ -1,29 +1,57 @@
 import { initialState } from "./initial-state";
-import Input from "./Input"
-
+import Input from "./Input";
+import Button from "./Button";
 
 function Education(props) {
-  const {handleEducationChange} = props
+  const { handleChange, education } = props;
+  // console.log(education);
 
-  return (
-    <section>
-      {initialState.education.forEach((elem) => {
-        Object.keys(elem).map((element) => {
-          if (element === "id") return;
-          const thing = initialState.education[0][element];
-          console.log("gagagagag")
-          return (
-            <Input
-              key={thing}
-              placeholder={thing.meta.placeholder}
-              type={thing.meta.type}
-              onChange={handleEducationChange}
-            />
-          );
-        });
-      })}
-    </section>
-  );
+  education.forEach((edu) => {
+    // console.log(edu);
+    const { id, universityName, city, degree, subject, fromDate, toDate } = edu;
+    return (
+      <section>
+        <Input
+          type={universityName.meta.type}
+          placeholder={universityName.meta.placeholder}
+          name={universityName.meta.name}
+          handleChange={handleChange}
+        />
+        <Input
+          type={city.meta.type}
+          placeholder={city.meta.placeholder}
+          name={city.meta.name}
+          handleChange={handleChange}
+        />
+        <Input
+          type={degree.meta.type}
+          placeholder={degree.meta.placeholder}
+          name={degree.meta.placeholder}
+          handleChange={handleChange}
+        />
+        <Input
+          type={subject.meta.type}
+          placeholder={subject.meta.placeholder}
+          name={subject.meta.placeholder}
+          handleChange={handleChange}
+        />
+        <Input
+          type={fromDate.meta.type}
+          placeholder={fromDate.meta.placeholder}
+          name={fromDate.meta.placeholder}
+          handleChange={handleChange}
+        />
+        <Input
+          type={toDate.meta.type}
+          placeholder={toDate.meta.placeholder}
+          name={toDate.meta.placeholder}
+          handleChange={handleChange}
+        />
+
+        {/* <Button type={type} value={value} handleClick={del}/> */}
+      </section>
+    );
+  });
 }
 
 export default Education;

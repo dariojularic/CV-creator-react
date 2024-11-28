@@ -9,16 +9,16 @@ import { initialState, emptyEducation, emptyExperience } from "./initial-state";
 import { useState } from "react";
 // import { personalInformationOptions, educationOptions, experienceOptions } from "./options";
 
-// zavrsi personalInfo komponentu
 // handleEducationChange
 // handleExperienceChange
+// personalInfo preko petlje
 
 function Form() {
   const [cv, setCv] = useState(initialState);
 
   function handlePersonalInfoChange(event) {
     const { name, value } = event.target;
-    console.log("fafa");
+    // console.log("fafa");
 
     setCv((prev) => {
       return {
@@ -38,9 +38,10 @@ function Form() {
   // jel mi treba tu id argument?
   function handleEducationChange(event) {
     const { name, value } = event.target;
-    // console.log(name);
-    // console.log(value);
+
     setCv((prev) => {
+      const newEducations = prev.map();
+
       return {
         ...prev,
         education: [...prev.education],
@@ -88,37 +89,19 @@ function Form() {
     <form className="form" action="">
       <div className="personal-information input-container">
         <h3>Personal Information</h3>
-        {/* {cv.personalInformation.forEach((key, value) => {
-          console.log(key)
-          console.log(value)
-        })} */}
+        <PersonalInformation
+          personalInfo={cv.personalInformation}
+          handleChange={handlePersonalInfoChange}
+        />
 
-        {/* {Object.keys(initialState.personalInformation).map((elem) => {
-          const thing = initialState.personalInformation[elem];
-          // console.log(thing)
-          return (
-            <Input
-              key={crypto.randomUUID()}
-              type={thing.meta.type}
-              placeholder={thing.meta.placeholder}
-              onChange={handlePersonalInfoChange}
-            />
-          );
-        })} */}
-
-        <div className="personal-info">
-          <PersonalInformation
-            personalInfo={cv.personalInformation}
-            // funkcija ne radi
-            handleChange={handlePersonalInfoChange}
-          />
+        {/* <div className="personal-info">
           <input
             type={cv.personalInformation.firstName.meta.type}
             name={cv.personalInformation.firstName.meta.name}
             value={cv.personalInformation.firstName.value}
             onChange={handlePersonalInfoChange}
           />
-        </div>
+        </div> */}
       </div>
 
       <div
@@ -127,23 +110,10 @@ function Form() {
       >
         <h3>Education</h3>
 
-        {/* {initialState.education.forEach((elem) => {
-          Object.keys(elem).map((element) => {
-            if (element === "id") return;
-            const obj = initialState.education[0][element];
-            console.log(obj)
-            return (
-              <Input
-                key={crypto.randomUUID()}
-                placeholder={obj.meta.placeholder}
-                type={obj.meta.type}
-                onChange={handleEducationChange}
-              />
-            );
-          });
-        })} */}
-
-        {/* <Education handleEducationChange={handleEducationChange} /> */}
+        <Education
+          handleChange={handleEducationChange}
+          education={cv.education}
+        />
 
         {Object.keys(initialState.education[0]).map((elem) => {
           if (elem === "id") return;
