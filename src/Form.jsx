@@ -32,7 +32,7 @@ function Form() {
         },
       };
     });
-    console.log(cv);
+    // console.log(cv);
   }
 
   // jel mi treba tu id argument?

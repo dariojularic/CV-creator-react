@@ -7,13 +7,26 @@ function PersonalInformation(props) {
   // console.log(inputs);
 
   const fields = Object.entries(personalInfo).map(([key, value]) => {
-    return {[key]: value}
+    return { [key]: value };
   });
-  console.log(fields);
-
+  // console.log(fields);
 
   return (
     <div className="personal-information input-container">
+      {fields.map((field) => {
+        const key = Object.keys(field);
+        // console.log(field[key].meta.type);
+        return (
+          <Input
+            key={field[key].meta.name}
+            type={field[key].meta.type}
+            placeholder={field[key].meta.placeholder}
+            name={field[key].meta.name}
+            handleChange={handleChange}
+          />
+        );
+      })}
+
       {/* <Input
         // jel trebam tu dat key??
         type={personalInfo.firstName.meta.type}
