@@ -4,16 +4,16 @@ import Button from "./Button";
 
 function Education(props) {
   const { handleChange, education } = props;
-  console.log(education);
+  // console.log(education);
 
   education.forEach((edu) => {
-    const fields = Object.entries(education).map(([key, value]) => {
-      console.log("key", key);
-      console.log("value", value);
+    const fields = Object.entries(edu).map(([key, value]) => {
+      // console.log("key", key);
+      // console.log("value", value);
       return { [key]: value };
     });
 
-    console.log("fields", fields)
+    // console.log("fields", fields)
     // pojasnit
     // console.log(edu);
     const { id, universityName, city, degree, subject, fromDate, toDate } = edu;
@@ -21,19 +21,23 @@ function Education(props) {
       <section>
         {fields.map((field) => {
           const key = Object.keys(field);
-          console.log(field)
-          console.log(field[key])
+          if (key[0] === "id" ) return
+          // console.log("key[0]", key[0])
+          // console.log("field", field)
+
+          // console.log("field[key]", field[key])
+          // console.log(field[key])
           return (
             <Input
               key={field[key].meta.name}
-              type={field[key].meta.type}
+              type={field[key[0]].meta.type}
               placeholder={field[key].meta.placeholder}
               name={field[key].meta.name}
               handleChange={handleChange}
             />
           );
         })}
-        <Input
+        {/* <Input
           type={universityName.meta.type}
           placeholder={universityName.meta.placeholder}
           name={universityName.meta.name}
@@ -68,7 +72,7 @@ function Education(props) {
           placeholder={toDate.meta.placeholder}
           name={toDate.meta.placeholder}
           handleChange={handleChange}
-        />
+        /> */}
 
         {/* <Button type={type} value={value} handleClick={del}/> */}
       </section>
