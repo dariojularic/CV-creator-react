@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 
 // type, id, name, required, minlegth, maxlength, size, placeholder, autocapitalize
 function Input(props) {
-  const { id, type, placeholder, name, handleChange, value } = props;
+  const { type, placeholder, name, handleChange } = props;
+  console.log(props)
+  // console.log("eduId", eduId);
   return (
     <input
       required={type === "date"}
@@ -11,7 +13,8 @@ function Input(props) {
       placeholder={placeholder}
       name={name}
       // value={value}
-      onChange={(event) => handleChange(id, event)}
+      onChange={handleChange}
+      // id={eduId}
     />
   );
 }
@@ -20,7 +23,7 @@ Input.propTypes = {
   type: PropTypes.string,
   placeholder: PropTypes.string,
   name: PropTypes.string,
-  handleChange: PropTypes.func
+  handleChange: PropTypes.func,
 };
 
 export default Input;

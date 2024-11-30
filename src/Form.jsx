@@ -36,24 +36,26 @@ function Form() {
   }
 
   // jel mi treba tu id argument?
-  function handleEducationChange(id, event) {
+  function handleEducationChange(event) {
     const { name, value } = event.target;
+    console.log(name);
+    console.log(value);
 
-    setCv((prev) => {
-      const newEducations = prev.education.map(edu => {
-        if (edu.id === id) return edu
-      });
-
-      console.log("prev.education", prev.education)
-      return {
-        ...prev,
-        education: [...prev.education],
-        [name]: {
-          ...prev.education[name],
-          value: value,
-        },
-      };
-    });
+    // setCv((prev) => {
+    //   const newEducations = prev.education.map((edu) => {
+    //     console.log("edu.name.value", edu.name.value)
+    //     // if (edu.id === id) return (edu.name.value = value);
+    //   });
+    //   console.log("prev.education", prev.education);
+    //   return {
+    //     ...prev,
+    //     education: [...prev.education],
+    //     [name]: {
+    //       ...prev.education[name],
+    //       value: value,
+    //     },
+    //   };
+    // });
     console.log(cv);
   }
 
@@ -118,7 +120,7 @@ function Form() {
           education={cv.education}
         />
 
-        {Object.keys(initialState.education[0]).map((elem) => {
+        {/* {Object.keys(initialState.education[0]).map((elem) => {
           if (elem === "id") return;
           const obj = initialState.education[0][elem];
           return (
@@ -130,7 +132,7 @@ function Form() {
               handleChange={handleEducationChange}
             />
           );
-        })}
+        })} */}
 
         <Button type="submit" value="Delete" />
         <Button
