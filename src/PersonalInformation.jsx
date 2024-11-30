@@ -4,12 +4,12 @@ import Input from "./Input";
 function PersonalInformation(props) {
   const { personalInfo, handleChange } = props;
   // const inputs = [...props.personalInfo];
-  console.log(personalInfo);
+  // console.log(personalInfo);
 
   const fields = Object.entries(personalInfo).map(([key, value]) => {
     return { [key]: value };
   });
-  console.log(fields);
+  // console.log(fields);
 
   return (
     <div className="personal-information input-container">

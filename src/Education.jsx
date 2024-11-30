@@ -21,6 +21,7 @@ function Education(props) {
       <section>
         {fields.map((field) => {
           const key = Object.keys(field);
+          console.log("id", id)
           if (key[0] === "id" ) return
           // console.log("key[0]", key[0])
           // console.log("field", field)
@@ -34,6 +35,7 @@ function Education(props) {
               placeholder={field[key].meta.placeholder}
               name={field[key].meta.name}
               handleChange={handleChange}
+              id={id}
             />
           );
         })}

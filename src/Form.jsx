@@ -36,12 +36,15 @@ function Form() {
   }
 
   // jel mi treba tu id argument?
-  function handleEducationChange(event) {
+  function handleEducationChange(id, event) {
     const { name, value } = event.target;
 
     setCv((prev) => {
-      const newEducations = prev.map();
+      const newEducations = prev.education.map(edu => {
+        if (edu.id === id) return edu
+      });
 
+      console.log("prev.education", prev.education)
       return {
         ...prev,
         education: [...prev.education],

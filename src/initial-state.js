@@ -47,7 +47,7 @@ const emptyEducation = {
         name: "toDate"
       }
     },
-    id: crypto.randomUUID,
+    id: crypto.randomUUID(),
   }
 
 
@@ -92,7 +92,7 @@ const emptyExperience = {
       name: "toDate"
     }
   },
-  id: crypto.randomUUID
+  id: crypto.randomUUID()
 }
 
 const initialState = {
