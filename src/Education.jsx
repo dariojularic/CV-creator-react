@@ -4,13 +4,35 @@ import Button from "./Button";
 
 function Education(props) {
   const { handleChange, education } = props;
-  // console.log(education);
+  console.log(education);
 
   education.forEach((edu) => {
+    const fields = Object.entries(education).map(([key, value]) => {
+      console.log("key", key);
+      console.log("value", value);
+      return { [key]: value };
+    });
+
+    console.log("fields", fields)
+    // pojasnit
     // console.log(edu);
     const { id, universityName, city, degree, subject, fromDate, toDate } = edu;
     return (
       <section>
+        {fields.map((field) => {
+          const key = Object.keys(field);
+          console.log(field)
+          console.log(field[key])
+          return (
+            <Input
+              key={field[key].meta.name}
+              type={field[key].meta.type}
+              placeholder={field[key].meta.placeholder}
+              name={field[key].meta.name}
+              handleChange={handleChange}
+            />
+          );
+        })}
         <Input
           type={universityName.meta.type}
           placeholder={universityName.meta.placeholder}

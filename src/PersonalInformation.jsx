@@ -4,7 +4,7 @@ import Input from "./Input";
 function PersonalInformation(props) {
   const { personalInfo, handleChange } = props;
   // const inputs = [...props.personalInfo];
-  // console.log(inputs);
+  console.log(personalInfo);
 
   const fields = Object.entries(personalInfo).map(([key, value]) => {
     return { [key]: value };
