@@ -1,22 +1,22 @@
 import { initialState } from "./initial-state";
 import Button from "./Button";
-import Input from "./Input"
+import Input from "./Input";
 
 function Education(props) {
   const { handleChange, education } = props;
 
-  console.log(education)
-  education.forEach((edu) => {
+  // console.log(education)
+  education.map((edu) => {
     const fields = Object.entries(edu).map(([key, value]) => {
+      console.log({ [key]: value });
       return { [key]: value };
     });
-
+    // console.log(fields)
     return (
       <section key={edu.id}>
         {fields.map((field) => {
           const key = Object.keys(field);
-          console.log(handleChange)
-          if (key[0] === "id") return;
+          if (key[0] === "id") return null;
           return (
             <Input
               key={field[key].meta.name}
@@ -27,8 +27,6 @@ function Education(props) {
             />
           );
         })}
-
-        {/* <Button type={type} value={value} handleClick={del}/> */}
       </section>
     );
   });

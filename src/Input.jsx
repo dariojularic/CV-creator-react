@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 // type, id, name, required, minlegth, maxlength, size, placeholder, autocapitalize
 function Input(props) {
   const { type, placeholder, name, handleChange } = props;
-  console.log(props)
+  // console.log(props)
   // console.log("eduId", eduId);
   return (
     <input

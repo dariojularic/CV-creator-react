@@ -87,7 +87,6 @@ function Form() {
     }));
     console.log(cv);
   }
-
   // posebne komponente za education, experience i personal Info
 
   return (
@@ -111,7 +110,7 @@ function Form() {
 
       <div
         className="education input-container"
-        onChange={handleEducationChange}
+        // onChange={handleEducationChange}
       >
         <h3>Education</h3>
 
