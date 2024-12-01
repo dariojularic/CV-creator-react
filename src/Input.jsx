@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 // type, id, name, required, minlegth, maxlength, size, placeholder, autocapitalize
 function Input(props) {
   const { id, type, placeholder, name, handleChange } = props;
-  // console.log(props)
   if (id === undefined) {
     return (
       <input
@@ -12,13 +11,9 @@ function Input(props) {
         type={type}
         placeholder={placeholder}
         name={name}
-        // value={value}
         onChange={handleChange}
-        // id={eduId}
       />
     );
-
-    // console.log("func", func)
   } else {
     // console.log(func)
     return (
@@ -32,11 +27,7 @@ function Input(props) {
         // id={eduId}
       />
     );
-
   }
-
-
-
 
   // console.log(props)
   // console.log("id", id);

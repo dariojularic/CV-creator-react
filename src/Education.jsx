@@ -1,17 +1,15 @@
 import { initialState } from "./initial-state";
 import Button from "./Button";
 import Input from "./Input";
-import "./Education.css"
+import "./Education.css";
 
 function Education(props) {
   const { handleChange, education } = props;
-  // console.log("education", education)
   return education.map((edu) => {
     const fields = Object.entries(edu).map(([key, value]) => {
-      // console.log({ [key]: value });
       return { [key]: value };
     });
-    // console.log(fields)
+    
     return (
       <section className="education-section" key={edu.id}>
         {fields.map((field) => {

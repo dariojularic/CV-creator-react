@@ -97,12 +97,10 @@ function Form() {
 
       <div className="education input-container">
         <h3>Education</h3>
-
         <Education
           handleChange={handleEducationChange}
           education={cv.education}
         />
-
         <Button type="submit" value="Delete" />
         <Button
           type="submit"
