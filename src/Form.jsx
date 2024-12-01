@@ -36,26 +36,41 @@ function Form() {
   }
 
   // jel mi treba tu id argument?
-  function handleEducationChange(event) {
+  function handleEducationChange(id, event) {
     const { name, value } = event.target;
     console.log(name);
     console.log(value);
 
-    // setCv((prev) => {
-    //   const newEducations = prev.education.map((edu) => {
-    //     console.log("edu.name.value", edu.name.value)
-    //     // if (edu.id === id) return (edu.name.value = value);
-    //   });
-    //   console.log("prev.education", prev.education);
-    //   return {
-    //     ...prev,
-    //     education: [...prev.education],
-    //     [name]: {
-    //       ...prev.education[name],
-    //       value: value,
-    //     },
-    //   };
-    // });
+    setCv((prev) => {
+      // console.log("prev.education", prev.education);
+      return {
+
+        ...prev,
+        education: [...prev.education].map((edu) => {
+          if (id === edu.id) {
+            // {...edu, [name].value = value}
+            // {...edu }
+            return {...edu,
+              [name]: {
+                ...edu[name],
+                value: value
+              }
+            }
+          }
+          // console.log(edu[name].value)
+        })
+        // education: [...prev.education].map((edu) => {
+        //   if (edu.id === id) {
+        //     console.log(edu.name)
+        //   }
+        // }),
+        // [name]: {
+        //   ...prev.education[name],
+        //   value: value,
+
+        // },
+      };
+    });
     console.log(cv);
   }
 
