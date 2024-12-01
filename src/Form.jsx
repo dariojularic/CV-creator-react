@@ -95,29 +95,13 @@ function Form() {
         />
       </div>
 
-      <div
-        className="education input-container"
-      >
+      <div className="education input-container">
         <h3>Education</h3>
 
         <Education
           handleChange={handleEducationChange}
           education={cv.education}
         />
-
-        {/* {Object.keys(initialState.education[0]).map((elem) => {
-          if (elem === "id") return;
-          const obj = initialState.education[0][elem];
-          return (
-            <Input
-              key={crypto.randomUUID()}
-              placeholder={obj.meta.placeholder}
-              type={obj.meta.type}
-              name={obj.meta.name}
-              handleChange={handleEducationChange}
-            />
-          );
-        })} */}
 
         <Button type="submit" value="Delete" />
         <Button
