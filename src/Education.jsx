@@ -1,6 +1,7 @@
 import { initialState } from "./initial-state";
 import Button from "./Button";
 import Input from "./Input";
+import "./Education.css"
 
 function Education(props) {
   const { handleChange, education } = props;
