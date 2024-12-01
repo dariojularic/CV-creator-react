@@ -6,14 +6,14 @@ function Education(props) {
   const { handleChange, education } = props;
 
   // console.log(education)
-  education.map((edu) => {
+  return education.map((edu) => {
     const fields = Object.entries(edu).map(([key, value]) => {
-      console.log({ [key]: value });
+      // console.log({ [key]: value });
       return { [key]: value };
     });
     // console.log(fields)
     return (
-      <section key={edu.id}>
+      <section className="education-section" key={edu.id}>
         {fields.map((field) => {
           const key = Object.keys(field);
           if (key[0] === "id") return null;
