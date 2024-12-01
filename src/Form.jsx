@@ -18,7 +18,6 @@ function Form() {
 
   function handlePersonalInfoChange(event) {
     const { name, value } = event.target;
-    // console.log("fafa");
 
     setCv((prev) => {
       return {
@@ -32,43 +31,26 @@ function Form() {
         },
       };
     });
-    // console.log(cv);
+    console.log(cv);
   }
 
-  // jel mi treba tu id argument?
   function handleEducationChange(id, event) {
     const { name, value } = event.target;
-    console.log(name);
-    console.log(value);
 
     setCv((prev) => {
-      // console.log("prev.education", prev.education);
       return {
-
         ...prev,
         education: [...prev.education].map((edu) => {
           if (id === edu.id) {
-            // {...edu, [name].value = value}
-            // {...edu }
-            return {...edu,
+            return {
+              ...edu,
               [name]: {
                 ...edu[name],
-                value: value
-              }
-            }
+                value: value,
+              },
+            };
           }
-          // console.log(edu[name].value)
-        })
-        // education: [...prev.education].map((edu) => {
-        //   if (edu.id === id) {
-        //     console.log(edu.name)
-        //   }
-        // }),
-        // [name]: {
-        //   ...prev.education[name],
-        //   value: value,
-
-        // },
+        }),
       };
     });
     console.log(cv);

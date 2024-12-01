@@ -5,7 +5,7 @@ import "./Education.css"
 
 function Education(props) {
   const { handleChange, education } = props;
-  console.log("education", education)
+  // console.log("education", education)
   return education.map((edu) => {
     const fields = Object.entries(edu).map(([key, value]) => {
       // console.log({ [key]: value });
