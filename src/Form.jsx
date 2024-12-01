@@ -84,7 +84,6 @@ function Form() {
     }));
     console.log(cv);
   }
-  // posebne komponente za education, experience i personal Info
 
   return (
     <form className="form" action="">
@@ -94,20 +93,10 @@ function Form() {
           personalInfo={cv.personalInformation}
           handleChange={handlePersonalInfoChange}
         />
-
-        {/* <div className="personal-info">
-          <input
-            type={cv.personalInformation.firstName.meta.type}
-            name={cv.personalInformation.firstName.meta.name}
-            value={cv.personalInformation.firstName.value}
-            onChange={handlePersonalInfoChange}
-          />
-        </div> */}
       </div>
 
       <div
         className="education input-container"
-        // onChange={handleEducationChange}
       >
         <h3>Education</h3>
 
