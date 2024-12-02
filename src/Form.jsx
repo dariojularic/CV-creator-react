@@ -69,6 +69,8 @@ function Form() {
                 value: value,
               },
             };
+          } else {
+            return {...exp}
           }
         }),
       };
@@ -136,6 +138,7 @@ function Form() {
           education={cv.education}
           handleDelete={handleDeleteEducation}
         />
+
         <Button
           type="button"
           value="Add Education"
