@@ -94,6 +94,25 @@ function Form() {
     console.log(cv);
   }
 
+  function handleDeleteEducation(id) {
+    setCv((prev) => ({
+      ...prev,
+      education: [...prev.education].filter(edu => {
+        if (edu.id !== id) return edu
+      })
+    }))
+  }
+
+  function handleDeleteExperience(id) {
+    setCv((prev) => ({
+      ...prev,
+      experience: [...prev.experience].filter(exp => {
+        if (exp.id !== id) return exp
+      })
+    }))
+  }
+
+
   return (
     <form className="form" action="">
       <div className="personal-information input-container">
@@ -110,7 +129,7 @@ function Form() {
           handleChange={handleEducationChange}
           education={cv.education}
         />
-        <Button type="submit" value="Delete" />
+        <Button type="button" value="Delete" handleClick={handleDeleteEducation}/>
         <Button
           type="submit"
           value="Add Education"
@@ -118,31 +137,14 @@ function Form() {
         />
       </div>
 
-      <div
-        className="experience input-container"
-        data="experience"
-        // onChange={handleExperienceChange}
-      >
+      <div className="experience input-container">
         <h3>Experience</h3>
         <Experience
           handleChange={handleExperienceChange}
           experience={cv.experience}
         />
 
-        {/* {Object.keys(initialState.experience[0]).map((elem) => {
-          if (elem === "id") return;
-          const thing = initialState.experience[0][elem];
-          return (
-            <Input
-              key={crypto.randomUUID()}
-              placeholder={thing.meta.placeholder}
-              type={thing.meta.type}
-              onChange={handleExperienceChange}
-            />
-          );
-        })} */}
-
-        <Button type="submit" value="Delete" />
+        <Button type="button" value="Delete" handleClick={handleDeleteExperience}/>
         <Button
           type="submit"
           value="Add Experience"
