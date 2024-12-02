@@ -5,7 +5,6 @@ import "./Education.css";
 
 function Education(props) {
   const { handleDelete, handleChange, education } = props;
-  // console.log("handleDelete", handleDelete);
   return education.map((edu) => {
     const fields = Object.entries(edu).map(([key, value]) => {
       return { [key]: value };

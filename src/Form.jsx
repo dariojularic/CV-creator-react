@@ -1,5 +1,4 @@
 import "./Form.css";
-import Input from "./Input";
 import Button from "./Button";
 import PropTypes from "prop-types";
 import Education from "./Education";
@@ -7,11 +6,6 @@ import Experience from "./Experience";
 import PersonalInformation from "./PersonalInformation";
 import { initialState, emptyEducation, emptyExperience } from "./initial-state";
 import { useState } from "react";
-// import { personalInformationOptions, educationOptions, experienceOptions } from "./options";
-
-// handleEducationChange
-// handleExperienceChange
-// personalInfo preko petlje
 
 function Form() {
   const [cv, setCv] = useState(initialState);
@@ -142,11 +136,6 @@ function Form() {
           education={cv.education}
           handleDelete={handleDeleteEducation}
         />
-        {/* <Button
-          type="button"
-          value="Delete"
-          handleClick={handleDeleteEducation}
-        /> */}
         <Button
           type="button"
           value="Add Education"

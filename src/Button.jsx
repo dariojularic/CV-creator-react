@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 
 function Button(props) {
   const { id, type, value, handleClick } = props;
-  // console.log("handleClick", handleClick);
-  // console.log("id", id);
   if (id === undefined) {
     return (
       <button type={type} onClick={handleClick}>
