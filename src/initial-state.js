@@ -1,3 +1,58 @@
+function addEducation() {
+  return {
+    universityName: {
+      value: "",
+      meta: {
+        placeholder: "University Name",
+        type: "text",
+        name: "universityName"
+      }
+    },
+    city: {
+      value: "",
+      meta: {
+        placeholder: "City",
+        type: "text",
+        name: "city"
+      }
+    },
+    degree: {
+      value: "",
+      meta: {
+        placeholder: "Degree",
+        type: "text",
+        name: "degree"
+      }
+    },
+    subject: {
+      value: "",
+      meta: {
+        placeholder: "Subject",
+        type: "text",
+        name: "subject"
+      }
+    },
+    fromDate: {
+      value: "",
+      meta: {
+        placeholder: "From",
+        type: "date",
+        name: "fromDate"
+      }
+    },
+    toDate: {
+      value: "",
+      meta: {
+        placeholder: "To",
+        type: "date",
+        name: "toDate"
+      }
+    },
+    id: crypto.randomUUID(),
+  }
+
+}
+
 const emptyEducation = {
   universityName: {
     value: "",
@@ -163,7 +218,7 @@ const initialState = {
     }
   },
   education: [
-    emptyEducation,
+    addEducation(),
   ],
   experience: [
     emptyExperience,
