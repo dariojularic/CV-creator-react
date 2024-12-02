@@ -1,8 +1,9 @@
 import Input from "./Input";
 import "./Experience.css";
+import Button from "./Button"
 
 function Experience(props) {
-  const { handleChange, experience } = props;
+  const { handleDelete, handleChange, experience } = props;
   return experience.map((exp) => {
     const fields = Object.entries(exp).map(([key, value]) => {
       return { [key]: value };
@@ -24,6 +25,12 @@ function Experience(props) {
             />
           );
         })}
+        <Button
+          id={exp.id}
+          type="button"
+          value="Delete"
+          handleClick={handleDelete}
+        />
       </section>
     );
   });

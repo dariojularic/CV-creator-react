@@ -53,6 +53,52 @@ function addEducation() {
 
 }
 
+function addExperience() {
+  return {
+    position: {
+      value: "",
+      meta: {
+        placeholder: "Position",
+        type: "text",
+        name: "position"
+      }
+    },
+    company: {
+      value: "",
+      meta: {
+        placeholder: "Company",
+        type: "text",
+        name: "company"
+      }
+    },
+    city: {
+      value: "",
+      meta: {
+        placeholder: "City",
+        type: "text",
+        name: "city"
+      }
+    },
+    fromDate: {
+      value: "",
+      meta: {
+        placeholder: "From",
+        type: "date",
+        name: "fromDate"
+      }
+    },
+    toDate: {
+      value: "",
+      meta: {
+        placeholder: "To",
+        type: "date",
+        name: "toDate"
+      }
+    },
+    id: crypto.randomUUID()
+  }
+}
+
 const emptyEducation = {
   universityName: {
     value: "",
@@ -221,7 +267,7 @@ const initialState = {
     addEducation(),
   ],
   experience: [
-    emptyExperience,
+    addExperience(),
   ]
 }
 
@@ -233,4 +279,4 @@ const initialState = {
 //   }
 // }
 
-export { initialState, emptyEducation, emptyExperience };
+export { initialState, emptyEducation, emptyExperience, addEducation, addExperience };

@@ -1,30 +1,19 @@
 import "./Input.css";
 import PropTypes from "prop-types";
 
+// type, id, name, required, minlegth, maxlength, size, placeholder, autocapitalize
 function Input(props) {
   const { id, type, placeholder, name, handleChange } = props;
 
-  if (id === undefined) {
-    return (
-      <input
-        required={type === "date"}
-        type={type}
-        placeholder={placeholder}
-        name={name}
-        onChange={handleChange}
-      />
-    );
-  } else {
-    return (
-      <input
-        required={type === "date"}
-        type={type}
-        placeholder={placeholder}
-        name={name}
-        onChange={(event) => handleChange(id, event)}
-      />
-    );
-  }
+  return (
+    <input
+      required={type === "date"}
+      type={type}
+      placeholder={placeholder}
+      name={name}
+      onChange={id ? (event) => handleChange(id, event) : handleChange}
+    />
+  );
 }
 
 Input.propTypes = {

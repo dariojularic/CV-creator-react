@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Education from "./Education";
 import Experience from "./Experience";
 import PersonalInformation from "./PersonalInformation";
-import { initialState, emptyEducation, emptyExperience } from "./initial-state";
+import { initialState, addEducation, addExperience } from "./initial-state";
 import { useState } from "react";
 
 function Form() {
@@ -79,7 +79,7 @@ function Form() {
   function handleAddEducation() {
     setCv((prev) => ({
       ...prev,
-      education: [...prev.education, emptyEducation],
+      education: [...prev.education, addEducation()],
     }));
     console.log(cv);
   }
@@ -87,7 +87,7 @@ function Form() {
   function handleAddExperience() {
     setCv((prev) => ({
       ...prev,
-      experience: [...prev.experience, emptyExperience],
+      experience: [...prev.experience, addExperience()],
     }));
     console.log(cv);
   }
@@ -148,13 +148,9 @@ function Form() {
         <Experience
           handleChange={handleExperienceChange}
           experience={cv.experience}
+          handleDelete={handleDeleteExperience}
         />
 
-        <Button
-          type="button"
-          value="Delete"
-          handleClick={handleDeleteExperience}
-        />
         <Button
           type="button"
           value="Add Experience"
@@ -173,6 +169,8 @@ function Form() {
 Form.propTypes = {
   cv: PropTypes.object,
   setCv: PropTypes.func,
+  addEducation: PropTypes.func,
+  addExperience: PropTypes.func
 };
 
 export default Form;

@@ -3,19 +3,12 @@ import PropTypes from "prop-types";
 
 function Button(props) {
   const { id, type, value, handleClick } = props;
-  if (id === undefined) {
-    return (
-      <button type={type} onClick={handleClick}>
-        {value}
-      </button>
-    );
-  } else {
-    return (
-      <button type={type} onClick={() => handleClick(id)}>
-        {value}
-      </button>
-    );
-  }
+  
+  return (
+    <button type={type} onClick={id ? () => handleClick(id) : handleClick}>
+      {value}
+    </button>
+  );
 }
 
 Button.propTypes = {
