@@ -1,4 +1,4 @@
-import { initialState } from "./initial-state";
+// import { initialState } from "./initial-state";
 import Button from "./Button";
 import Input from "./Input";
 import "./Education.css";
@@ -9,7 +9,7 @@ function Education(props) {
     const fields = Object.entries(edu).map(([key, value]) => {
       return { [key]: value };
     });
-    
+
     return (
       <section className="education-section" key={edu.id}>
         {fields.map((field) => {

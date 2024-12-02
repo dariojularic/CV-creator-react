@@ -121,7 +121,7 @@ function Form() {
       <div
         className="experience input-container"
         data="experience"
-        onChange={handleExperienceChange}
+        // onChange={handleExperienceChange}
       >
         <h3>Experience</h3>
         <Experience

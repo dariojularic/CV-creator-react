@@ -3,6 +3,7 @@ import "./Experience.css"
 
 function Experience(props) {
   const { handleChange, experience } = props;
+  console.log(experience)
   return experience.map((exp) => {
     const fields = Object.entries(exp).map(([key, value]) => {
       return { [key]: value };
