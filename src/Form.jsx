@@ -95,23 +95,25 @@ function Form() {
   }
 
   function handleDeleteEducation(id) {
+    const newEducation = cv.education.filter((edu) => {if (edu.id !== id) return edu})
+    console.log(newEducation)
+
     setCv((prev) => ({
       ...prev,
-      education: [...prev.education].filter(edu => {
-        if (edu.id !== id) return edu
-      })
-    }))
+      education: [...prev.education].filter((edu) => {
+        if (edu.id !== id) return edu;
+      }),
+    }));
   }
 
   function handleDeleteExperience(id) {
     setCv((prev) => ({
       ...prev,
-      experience: [...prev.experience].filter(exp => {
-        if (exp.id !== id) return exp
-      })
-    }))
+      experience: [...prev.experience].filter((exp) => {
+        if (exp.id !== id) return exp;
+      }),
+    }));
   }
-
 
   return (
     <form className="form" action="">
@@ -128,8 +130,13 @@ function Form() {
         <Education
           handleChange={handleEducationChange}
           education={cv.education}
+          handleDelete={handleDeleteEducation}
         />
-        <Button type="button" value="Delete" handleClick={handleDeleteEducation}/>
+        {/* <Button
+          type="button"
+          value="Delete"
+          handleClick={handleDeleteEducation}
+        /> */}
         <Button
           type="submit"
           value="Add Education"
@@ -144,7 +151,11 @@ function Form() {
           experience={cv.experience}
         />
 
-        <Button type="button" value="Delete" handleClick={handleDeleteExperience}/>
+        <Button
+          type="button"
+          value="Delete"
+          handleClick={handleDeleteExperience}
+        />
         <Button
           type="submit"
           value="Add Experience"

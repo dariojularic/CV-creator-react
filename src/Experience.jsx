@@ -1,9 +1,9 @@
-import Input from "./Input"
-import "./Experience.css"
+import Input from "./Input";
+import "./Experience.css";
 
 function Experience(props) {
   const { handleChange, experience } = props;
-  console.log(experience)
+  // console.log(experience)
   return experience.map((exp) => {
     const fields = Object.entries(exp).map(([key, value]) => {
       return { [key]: value };
@@ -28,8 +28,6 @@ function Experience(props) {
       </section>
     );
   });
-
 }
-
 
 export default Experience;
