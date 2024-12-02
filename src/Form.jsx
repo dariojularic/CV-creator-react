@@ -56,15 +56,24 @@ function Form() {
     console.log(cv);
   }
 
-  function handleExperienceChange(event) {
+  function handleExperienceChange(id, event) {
     const { name, value } = event.target;
-    console.log(event.target);
-    setCv({
-      ...cv,
-      experience: {
-        ...cv.experience,
-        [name]: value,
-      },
+
+    setCv((prev) => {
+      return {
+        ...prev,
+        experience: [...prev.experience].map((exp) => {
+          if (id === exp.id) {
+            return {
+              ...exp,
+              [name]: {
+                ...exp[name],
+                value: value,
+              },
+            };
+          }
+        }),
+      };
     });
     console.log(cv);
   }
@@ -115,7 +124,12 @@ function Form() {
         onChange={handleExperienceChange}
       >
         <h3>Experience</h3>
-        {Object.keys(initialState.experience[0]).map((elem) => {
+        <Experience
+          handleChange={handleExperienceChange}
+          experience={cv.experience}
+        />
+
+        {/* {Object.keys(initialState.experience[0]).map((elem) => {
           if (elem === "id") return;
           const thing = initialState.experience[0][elem];
           return (
@@ -126,7 +140,7 @@ function Form() {
               onChange={handleExperienceChange}
             />
           );
-        })}
+        })} */}
 
         <Button type="submit" value="Delete" />
         <Button
