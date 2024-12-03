@@ -14,11 +14,11 @@ function PersonalInformation(props) {
         const key = Object.keys(field);
         return (
           <Input
-            key={field[key].meta.name}
-            type={field[key].meta.type}
-            placeholder={field[key].meta.placeholder}
-            name={field[key].meta.name}
-            handleChange={handleChange}
+          // key={field[key].meta.name}
+          // type={field[key].meta.type}
+          // placeholder={field[key].meta.placeholder}
+          // name={field[key].meta.name}
+          // handleChange={handleChange}
           />
         );
       })}
