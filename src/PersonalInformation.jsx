@@ -14,14 +14,17 @@ function PersonalInformation(props) {
         const key = Object.keys(field);
         return (
           <Input
-            key={field[key].meta.name}
-            type={field[key].meta.type}
-            placeholder={field[key].meta.placeholder}
-            name={field[key].meta.name}
-            handleChange={handleChange}
+          // key={field[key].meta.name}
+          // type={field[key].meta.type}
+          // placeholder={field[key].meta.placeholder}
+          // name={field[key].meta.name}
+          // handleChange={handleChange}
           />
         );
       })}
+      {/* tu ide drugi dio inputa za slike */}
+      {/* accept attribute */}
+      <input type="text" placeholder="Photo" />
     </div>
   );
 }

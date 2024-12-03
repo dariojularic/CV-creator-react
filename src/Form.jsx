@@ -8,9 +8,26 @@ import PersonalInformation from "./PersonalInformation";
 import { initialState, addEducation, addExperience } from "./initial-state";
 import { useState } from "react";
 
+// photo type = file hidden tako da se clickom na <p> aktivira <input>
+// na click preview da se pojavi preview componenta
+// ubacit skrol na preview (window.scrollTo)
+// dodat back button
+// dodat print button
+
+
+
+// components
+//    PersonalInfo(folder)
+//      Index.jsx
+//      NekaKomponenta.jsx
+//      Index.css
+//    Education(folder)
+//      Index.jsx
+//      NekaKOmpo.jsx
+
 function Form() {
   const [cv, setCv] = useState(initialState);
-  const [preview, setPreview] = useState(true);
+  const [preview, setPreview] = useState(false);
 
   function handlePersonalInfoChange(event) {
     const { name, value } = event.target;
@@ -170,7 +187,7 @@ function Form() {
           </div>
 
           <div className="submit-btns">
-            <Button type="button" value="Preview" />
+            <Button type="button" value="Preview" handleClick={() => setPreview(true)}/>
             <Button type="reset" value="Reset" handleClick={resetCv} />
           </div>
         </form>

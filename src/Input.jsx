@@ -8,6 +8,7 @@ function Input(props) {
   return (
     <input
       required={type === "date"}
+      hidden={type === "file"}
       type={type}
       placeholder={placeholder}
       name={name}

@@ -226,7 +226,7 @@ const initialState = {
       value: "",
       meta: {
         placeholder: "Photo",
-        type: "text",
+        type: "file",
         name: "photo"
       }
     },
