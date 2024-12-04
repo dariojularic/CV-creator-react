@@ -45,9 +45,9 @@ function Preview(props) {
             <div className="experience">
               <h3>Experience</h3>
               <hr />
-              {cv.experience.forEach((exp) => {
+              {cv.experience.map((exp) => {
                 return (
-                  <div className="experience">
+                  <div className="experience" key={exp.id}>
                     <p className="experience-date">
                       {exp.fromDate.value} - {exp.toDate.value}{" "}
                     </p>
