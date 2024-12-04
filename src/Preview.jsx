@@ -8,13 +8,14 @@ function Preview(props) {
     <>
       <div className="overlay"></div>
       <div className="container">
-        <header>
+        <section className="cv-header">
           <p className="first-name">{cv.personalInformation.firstName.value}</p>
           <p className="last-name">{cv.personalInformation.lastName.value}</p>
           <p className="title">{cv.personalInformation.title.value}</p>
-        </header>
+        </section>
+
         <main>
-          <div>
+          <section className="left-side">
             <div className="about-me-container">
               <h3>About Me</h3>
               <p className="about-me-paragraph">
@@ -58,14 +59,22 @@ function Preview(props) {
                 );
               })}
             </div>
-          </div>
+          </section>
 
-          <div>
+          <section className="right-side">
             <div className="image-container">
               <img src="" alt="" />
             </div>
-            <div className="personal-details"></div>
-          </div>
+            <div className="personal-details">
+              <h3>Perosnal Details</h3>
+              <p>Adress</p>
+              <p>{cv.personalInformation.adress.value}</p>
+              <p>Phone number</p>
+              <p>{cv.personalInformation.phoneNumber.value}</p>
+              <p>Email</p>
+              <p>{cv.personalInformation.email.value}</p>
+            </div>
+          </section>
         </main>
       </div>
     </>,
