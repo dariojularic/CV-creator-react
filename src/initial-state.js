@@ -223,7 +223,7 @@ const initialState = {
       }
     },
     photo: {
-      value: "",
+      value: "public/assets/Images/profileImage.jpg",
       meta: {
         placeholder: "Photo",
         type: "file",

@@ -3,14 +3,13 @@ import ReactDom from "react-dom";
 
 function Preview(props) {
   const { cv } = props;
-  console.log(props);
+  console.log(cv);
   return ReactDom.createPortal(
     <>
       <div className="overlay"></div>
       <div className="container">
         <section className="cv-header">
-          <p className="first-name">{cv.personalInformation.firstName.value}</p>
-          <p className="last-name">{cv.personalInformation.lastName.value}</p>
+          <p className="name">{cv.personalInformation.firstName.value} {cv.personalInformation.lastName.value}</p>
           <p className="title">{cv.personalInformation.title.value}</p>
         </section>
 
@@ -27,7 +26,7 @@ function Preview(props) {
               <h3>Education</h3>
               <hr />
               {cv.education.map((edu) => {
-                console.log("edu", edu)
+                // console.log("edu", edu)
                 return (
                   <div className="education" key={edu.id}>
                     <p className="education-date">
@@ -63,7 +62,7 @@ function Preview(props) {
 
           <section className="right-side">
             <div className="image-container">
-              <img src="" alt="" />
+              <img className="cv-image" src={cv.personalInformation.photo.value} alt="" />
             </div>
             <div className="personal-details">
               <h3>Perosnal Details</h3>
