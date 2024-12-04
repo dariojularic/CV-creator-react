@@ -25,9 +25,10 @@ function Preview(props) {
             <div className="education-container">
               <h3>Education</h3>
               <hr />
-              {cv.education.forEach((edu) => {
+              {cv.education.map((edu) => {
+                console.log("edu", edu)
                 return (
-                  <div className="education">
+                  <div className="education" key={edu.id}>
                     <p className="education-date">
                       {edu.fromDate.value} - {edu.toDate.value}{" "}
                     </p>
