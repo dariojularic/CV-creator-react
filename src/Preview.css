@@ -33,7 +33,13 @@
 }
 
 .name {
-  margin: 16px;
+  margin: 12px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 12px;
 }
 
 main {

@@ -1,6 +1,6 @@
 import "./Preview.css";
 import ReactDom from "react-dom";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 
 function Preview(props) {
   const { cv } = props;
@@ -36,12 +36,13 @@ function Preview(props) {
                     <p className="education-date">
                       {/* {format(edu.fromDate.value, "dd/MMM/yyyy")} - {format(edu.toDate.value, "dd/MMM/yyyy")} */}
                     </p>
-                    <p className="education-diploma">{edu.degree.value}</p>
-                    <p className="education-subject">{edu.subject.value}</p>
-                    <p className="education-city">{edu.city.value}</p>
-                    <p className="education-university-name">
-                      {edu.universityName.value}
-                    </p>
+                    <div>
+                      <p className="education-diploma">{edu.degree.value}</p>
+                      <p className="education-subject">{edu.subject.value}</p>
+                      <p className="education-university">
+                        {edu.universityName.value}, {edu.city.value}
+                      </p>
+                    </div>
                   </div>
                 );
               })}
@@ -75,11 +76,18 @@ function Preview(props) {
             <div className="personal-details">
               <h3 className="cv-heading">Perosnal Details</h3>
               <hr />
-              <p>Adress</p>
+              <p>
+                {" "}
+                <strong> Adress </strong>
+              </p>
               <p>{cv.personalInformation.adress.value}</p>
-              <p>Phone number</p>
+              <p>
+                <strong>Phone number</strong>
+              </p>
               <p>{cv.personalInformation.phoneNumber.value}</p>
-              <p>Email</p>
+              <p>
+                <strong>Email</strong>
+              </p>
               <p>{cv.personalInformation.email.value}</p>
             </div>
           </section>
