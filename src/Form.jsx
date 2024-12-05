@@ -187,7 +187,10 @@ function Form() {
           </div>
 
           <div className="submit-btns">
-            <Button type="button" value="Preview" handleClick={() => setPreview(true)}/>
+            <Button type="submit" value="Preview" handleClick={(event) => {
+              event.preventDefault()
+              setPreview(true)
+            }}/>
             <Button type="reset" value="Reset" handleClick={resetCv} />
           </div>
         </form>

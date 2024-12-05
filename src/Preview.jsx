@@ -1,5 +1,6 @@
 import "./Preview.css";
 import ReactDom from "react-dom";
+import { format } from 'date-fns';
 
 function Preview(props) {
   const { cv } = props;
@@ -9,28 +10,31 @@ function Preview(props) {
       <div className="overlay"></div>
       <div className="container">
         <section className="cv-header">
-          <p className="name">{cv.personalInformation.firstName.value} {cv.personalInformation.lastName.value}</p>
+          <p className="name">
+            {cv.personalInformation.firstName.value}{" "}
+            {cv.personalInformation.lastName.value}
+          </p>
           <p className="title">{cv.personalInformation.title.value}</p>
         </section>
 
         <main>
           <section className="left-side">
             <div className="about-me-container">
-              <h3>About Me</h3>
+              <h3 className="cv-heading">About Me</h3>
+              <hr />
               <p className="about-me-paragraph">
                 {cv.personalInformation.aboutMe.value}
               </p>
-              <hr />
             </div>
             <div className="education-container">
-              <h3>Education</h3>
+              <h3 className="cv-heading">Education</h3>
               <hr />
               {cv.education.map((edu) => {
                 // console.log("edu", edu)
                 return (
                   <div className="education" key={edu.id}>
                     <p className="education-date">
-                      {edu.fromDate.value} - {edu.toDate.value}{" "}
+                      {/* {format(edu.fromDate.value, "dd/MMM/yyyy")} - {format(edu.toDate.value, "dd/MMM/yyyy")} */}
                     </p>
                     <p className="education-diploma">{edu.degree.value}</p>
                     <p className="education-subject">{edu.subject.value}</p>
@@ -43,13 +47,13 @@ function Preview(props) {
               })}
             </div>
             <div className="experience">
-              <h3>Experience</h3>
+              <h3 className="cv-heading">Experience</h3>
               <hr />
               {cv.experience.map((exp) => {
                 return (
                   <div className="experience" key={exp.id}>
                     <p className="experience-date">
-                      {exp.fromDate.value} - {exp.toDate.value}{" "}
+                      {/* {format(exp.fromDate.value, "dd/MMM/yyyy")} - {format(exp.toDate.value, "dd/MMM/yyyy")}{" "} */}
                     </p>
                     <p className="experience-position">{exp.position.value}</p>
                     <p className="experience-company">{exp.company.value}</p>
@@ -62,10 +66,15 @@ function Preview(props) {
 
           <section className="right-side">
             <div className="image-container">
-              <img className="cv-image" src={cv.personalInformation.photo.value} alt="" />
+              <img
+                className="cv-image"
+                src={cv.personalInformation.photo.value}
+                alt=""
+              />
             </div>
             <div className="personal-details">
-              <h3>Perosnal Details</h3>
+              <h3 className="cv-heading">Perosnal Details</h3>
+              <hr />
               <p>Adress</p>
               <p>{cv.personalInformation.adress.value}</p>
               <p>Phone number</p>

@@ -44,6 +44,7 @@ main {
 
 .left-side {
   width: 65%;
+  padding: 12px;
 }
 
 .right-side {
@@ -64,4 +65,13 @@ main {
 .cv-image {
   height: 100%;
   width: 100%;
+}
+
+.cv-heading {
+  color: green;
+  margin: 12px 0 0 0;
+}
+
+hr {
+  margin: 6px 0;
 }
