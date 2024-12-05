@@ -7,12 +7,12 @@ function Input(props) {
 
   return (
     <input
-      required={type === "date"}
-      hidden={type === "file"}
-      type={type}
-      placeholder={placeholder}
-      name={name}
-      onChange={id ? (event) => handleChange(id, event) : handleChange}
+    // required={type === "date"}
+    // hidden={type === "file"}
+    // type={type}
+    // placeholder={placeholder}
+    // name={name}
+    // onChange={id ? (event) => handleChange(id, event) : handleChange}
     />
   );
 }
