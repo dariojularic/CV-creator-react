@@ -34,10 +34,14 @@ function Preview(props) {
                 return (
                   <div className="education" key={edu.id}>
                     <p className="education-date">
-                      {/* {format(edu.fromDate.value, "dd/MMM/yyyy")} - {format(edu.toDate.value, "dd/MMM/yyyy")} */}
+                      <strong>
+                        {format(edu.fromDate.value, "dd/MMM/yyyy")} - {format(edu.toDate.value, "dd/MMM/yyyy")}
+                      </strong>
                     </p>
                     <div>
-                      <p className="education-diploma">{edu.degree.value}</p>
+                      <p className="education-diploma">
+                        <strong> {edu.degree.value}</strong>
+                      </p>
                       <p className="education-subject">{edu.subject.value}</p>
                       <p className="education-university">
                         {edu.universityName.value}, {edu.city.value}
