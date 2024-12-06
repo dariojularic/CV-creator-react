@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Input from "./Input";
 
 function PersonalInformation(props) {
-  const { personalInfo, handleChange } = props;
+  const { setCv, cv, personalInfo, handleChange } = props;
 
   const fields = Object.entries(personalInfo).map(([key, value]) => {
     return { [key]: value };
@@ -22,42 +22,24 @@ function PersonalInformation(props) {
           />
         );
       })}
-      {/* tu ide drugi dio inputa za slike */}
-      {/* accept attribute */}
+      
       <input
         type="text"
         placeholder="Photo"
-        onClick={() => {
+        onClick={(eventClick) => {
           const inputElement = document.querySelector("input[type='file']");
           inputElement.click();
-          inputElement.setAttribute("onChange", (event) => {
-            handleChange(() => console.log("radi jbt"));
-
-            console.log(event);
-            console.log(event.target);
-            console.log(event.target.files);
-            // inputElement
-            event.target.value = "Click to change photo.";
-            event.target.setAttribute("tabIndex", "-1");
-            event.target.setAttribute("readOnly", true);
-            // console.log(event.target);
-            // this.value = personalInfo.photo.value
+          inputElement.addEventListener("change", () => {
+            eventClick.target.placeholder =
+              "Image uploaded! Click to change photo";
+            eventClick.target.setAttribute("readOnly", true);
+            setCv((prev) => {
+              prev.personalInformation.photo.meta.placeholder =
+                "Image uploaded! Click to change photo";
+              return prev;
+            });
           });
-          console.log(inputElement);
         }}
-
-        // onChange={(event) => {
-        //   handleChange()
-        //   console.log(event);
-        //   console.log(event.target);
-        //   console.log(event.target.files);
-        //   // inputElement
-        //   event.target.value = "Click to change photo.";
-        //   event.target.setAttribute("tabIndex", "-1");
-        //   event.target.setAttribute("readOnly", true);
-        //   // console.log(event.target);
-        //   // this.value = personalInfo.photo.value
-        // }}
       />
     </div>
   );

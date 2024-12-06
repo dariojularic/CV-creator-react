@@ -14,8 +14,6 @@ import { useState } from "react";
 // photo type = file hidden tako da se clickom na <p> aktivira <input>
 // dodat print button
 
-
-
 // components
 //    PersonalInfo(folder)
 //      Index.jsx
@@ -133,60 +131,69 @@ function Form() {
 
   function resetCv() {
     setCv(initialState);
-    window.scrollTo({top: 0, behavior: "smooth"})
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
     <>
       {/* {!preview ? ( */}
-        <form className="form" action="">
-          <div className="personal-information input-container">
-            <h3>Personal Information</h3>
-            <PersonalInformation
-              personalInfo={cv.personalInformation}
-              handleChange={handlePersonalInfoChange}
-            />
-          </div>
+      <form className="form" action="">
+        <div className="personal-information input-container">
+          <h3>Personal Information</h3>
+          <PersonalInformation
+            personalInfo={cv.personalInformation}
+            // personalInfo={() => {
+            //   console.log(cv.personalInformation)
+            // } }
+            handleChange={handlePersonalInfoChange}
+            setCv={setCv}
+            cv={cv}
+          />
+        </div>
 
-          <div className="education input-container">
-            <h3>Education</h3>
-            <Education
-              handleChange={handleEducationChange}
-              education={cv.education}
-              handleDelete={handleDeleteEducation}
-            />
+        <div className="education input-container">
+          <h3>Education</h3>
+          <Education
+            handleChange={handleEducationChange}
+            education={cv.education}
+            handleDelete={handleDeleteEducation}
+          />
 
-            <Button
-              type="button"
-              value="Add Education"
-              handleClick={handleAddEducation}
-            />
-          </div>
+          <Button
+            type="button"
+            value="Add Education"
+            handleClick={handleAddEducation}
+          />
+        </div>
 
-          <div className="experience-form input-container">
-            <h3>Experience</h3>
-            <Experience
-              handleChange={handleExperienceChange}
-              experience={cv.experience}
-              handleDelete={handleDeleteExperience}
-            />
+        <div className="experience-form input-container">
+          <h3>Experience</h3>
+          <Experience
+            handleChange={handleExperienceChange}
+            experience={cv.experience}
+            handleDelete={handleDeleteExperience}
+          />
 
-            <Button
-              type="button"
-              value="Add Experience"
-              handleClick={handleAddExperience}
-            />
-          </div>
+          <Button
+            type="button"
+            value="Add Experience"
+            handleClick={handleAddExperience}
+          />
+        </div>
 
-          <div className="submit-btns">
-            <Button type="submit" value="Preview" handleClick={(event) => {
-              event.preventDefault()
-              window.scrollTo({top: 0, behavior: "smooth"})
-              setPreview(true)
-            }}/>
-            <Button type="reset" value="Reset" handleClick={resetCv} />
-          </div>
-        </form>
+        <div className="submit-btns">
+          <Button
+            type="submit"
+            value="Preview"
+            handleClick={(event) => {
+              event.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setPreview(true);
+            }}
+          />
+          <Button type="reset" value="Reset" handleClick={resetCv} />
+        </div>
+      </form>
       {/* // ) : (
       //   <Preview cv={cv} setPreview={setPreview} />
       // )} */}
