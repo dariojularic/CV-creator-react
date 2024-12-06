@@ -14,7 +14,6 @@ function PersonalInformation(props) {
         const key = Object.keys(field);
         return (
           <Input
-
             key={field[key].meta.name}
             type={field[key].meta.type}
             placeholder={field[key].meta.placeholder}
@@ -25,18 +24,24 @@ function PersonalInformation(props) {
       })}
       {/* tu ide drugi dio inputa za slike */}
       {/* accept attribute */}
-      <input type="text" placeholder="Photo" onClick={async (event) => {
-        const inputElement = document.querySelector("input[type='file']");
-        inputElement.click()
-        // inputElement
+      <input
+        type="text"
+        placeholder="Photo"
+        onClick={async (event) => {
+          const inputElement = document.querySelector("input[type='file']");
+          inputElement.click();
+          // inputElement
 
-        console.log(event.target)
-        setTimeout(() => {
-          event.target.value = "Click to change photo."
-
-        }, 3000);
-        // this.value = personalInfo.photo.value
-      }}/>
+          console.log(event.target);
+          setTimeout(() => {
+            event.target.value = "Click to change photo.";
+            event.target.setAttribute("tabIndex", "-1");
+            event.target.setAttribute("readOnly", true);
+            console.log(event.target);
+          }, 3000);
+          // this.value = personalInfo.photo.value
+        }}
+      />
     </div>
   );
 }

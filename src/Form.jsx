@@ -133,6 +133,7 @@ function Form() {
 
   function resetCv() {
     setCv(initialState);
+    window.scrollTo({top: 0, behavior: "smooth"})
   }
 
   return (
