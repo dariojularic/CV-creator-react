@@ -114,15 +114,6 @@ function Form() {
   }
 
   function handleDeleteEducation(id) {
-    const newEducation = cv.education.filter((edu) => {
-      console.log("id", id);
-      if (edu.id !== id) {
-        console.log("edu", edu);
-        return edu;
-      }
-    });
-    console.log(newEducation);
-
     setCv((prev) => ({
       ...prev,
       education: [...prev.education].filter((edu) => {
@@ -146,7 +137,7 @@ function Form() {
 
   return (
     <>
-      {!preview ? (
+      {/* {!preview ? ( */}
         <form className="form" action="">
           <div className="personal-information input-container">
             <h3>Personal Information</h3>
@@ -189,14 +180,17 @@ function Form() {
           <div className="submit-btns">
             <Button type="submit" value="Preview" handleClick={(event) => {
               event.preventDefault()
+              window.scrollTo({top: 0, behavior: "smooth"})
               setPreview(true)
             }}/>
             <Button type="reset" value="Reset" handleClick={resetCv} />
           </div>
         </form>
-      ) : (
-        <Preview cv={cv} />
-      )}
+      {/* // ) : (
+      //   <Preview cv={cv} setPreview={setPreview} />
+      // )} */}
+
+      {preview && <Preview cv={cv} setPreview={setPreview} />}
     </>
   );
 }

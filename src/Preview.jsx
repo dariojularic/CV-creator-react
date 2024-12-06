@@ -3,18 +3,31 @@ import ReactDom from "react-dom";
 import { format } from "date-fns";
 
 function Preview(props) {
-  const { cv } = props;
+  const { cv, setPreview } = props;
   console.log(cv);
   return ReactDom.createPortal(
     <>
-      <div className="overlay"></div>
+      <div className="overlay" onClick={() => {
+        setPreview(false)
+        window.scrollTo({top: 0, behavior: "smooth"})
+      }
+      }></div>
       <div className="container">
         <section className="cv-header">
+          <div>
+
           <p className="name">
             {cv.personalInformation.firstName.value}{" "}
             {cv.personalInformation.lastName.value}
           </p>
           <p className="title">{cv.personalInformation.title.value}</p>
+          </div>
+
+          <div className="buttons">
+            <button onClick={() => setPreview(false)}>Back</button>
+            <button>Print</button>
+          </div>
+
         </section>
 
         <main>
@@ -35,10 +48,10 @@ function Preview(props) {
                   <div className="education" key={edu.id}>
                     <p className="education-date">
                       <strong>
-                        {(edu.fromDate.value && edu.toDate.value) ? (format(edu.fromDate.value, "dd/MMM/yyyy") + " - " + format(edu.toDate.value, "dd/MMM/yyyy")) : null}
+                        {(edu.fromDate.value && edu.toDate.value) ? (format(edu.fromDate.value, "dd/MMM/yyyyd") + " - " + format(edu.toDate.value, "dd/MMM/yyyy")) : null}
                       </strong>
                     </p>
-                    <div>
+                    <div className="education-details">
                       <p className="education-diploma">
                         <strong> {edu.degree.value}</strong>
                       </p>
