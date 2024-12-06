@@ -31,7 +31,10 @@ function PersonalInformation(props) {
         // inputElement
 
         console.log(event.target)
-        event.target.value = personalInfo.photo.value
+        setTimeout(() => {
+          event.target.value = "Click to change photo."
+
+        }, 3000);
         // this.value = personalInfo.photo.value
       }}/>
     </div>
