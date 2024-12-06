@@ -64,7 +64,16 @@ main {
 }
 
 .education-details {
-  margin: 0 16px;
+  margin: 0 32px;
+}
+
+.experience-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.experience-details {
+  margin: 0 32px;
 }
 
 .right-side {

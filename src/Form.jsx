@@ -8,10 +8,10 @@ import PersonalInformation from "./PersonalInformation";
 import { initialState, addEducation, addExperience } from "./initial-state";
 import { useState } from "react";
 
+// x na click preview da se pojavi preview componenta
+// x ubacit skrol na preview (window.scrollTo)
+// x dodat back button
 // photo type = file hidden tako da se clickom na <p> aktivira <input>
-// na click preview da se pojavi preview componenta
-// ubacit skrol na preview (window.scrollTo)
-// dodat back button
 // dodat print button
 
 
@@ -44,7 +44,7 @@ function Form() {
         },
       };
     });
-    console.log(cv);
+    // console.log(cv);
   }
 
   function handleEducationChange(id, event) {
@@ -70,7 +70,7 @@ function Form() {
         }),
       };
     });
-    console.log(cv);
+    // console.log(cv);
   }
 
   function handleExperienceChange(id, event) {
@@ -94,7 +94,7 @@ function Form() {
         }),
       };
     });
-    console.log(cv);
+    // console.log(cv);
   }
 
   function handleAddEducation() {
@@ -102,7 +102,7 @@ function Form() {
       ...prev,
       education: [...prev.education, addEducation()],
     }));
-    console.log(cv);
+    // console.log(cv);
   }
 
   function handleAddExperience() {
@@ -110,7 +110,7 @@ function Form() {
       ...prev,
       experience: [...prev.experience, addExperience()],
     }));
-    console.log(cv);
+    // console.log(cv);
   }
 
   function handleDeleteEducation(id) {
@@ -162,7 +162,7 @@ function Form() {
             />
           </div>
 
-          <div className="experience input-container">
+          <div className="experience-form input-container">
             <h3>Experience</h3>
             <Experience
               handleChange={handleExperienceChange}

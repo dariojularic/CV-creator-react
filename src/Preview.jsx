@@ -4,30 +4,30 @@ import { format } from "date-fns";
 
 function Preview(props) {
   const { cv, setPreview } = props;
-  console.log(cv);
+  // console.log(cv);
   return ReactDom.createPortal(
     <>
-      <div className="overlay" onClick={() => {
-        setPreview(false)
-        window.scrollTo({top: 0, behavior: "smooth"})
-      }
-      }></div>
+      <div
+        className="overlay"
+        onClick={() => {
+          setPreview(false);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      ></div>
       <div className="container">
         <section className="cv-header">
           <div>
-
-          <p className="name">
-            {cv.personalInformation.firstName.value}{" "}
-            {cv.personalInformation.lastName.value}
-          </p>
-          <p className="title">{cv.personalInformation.title.value}</p>
+            <p className="name">
+              {cv.personalInformation.firstName.value}{" "}
+              {cv.personalInformation.lastName.value}
+            </p>
+            <p className="title">{cv.personalInformation.title.value}</p>
           </div>
 
           <div className="buttons">
             <button onClick={() => setPreview(false)}>Back</button>
             <button>Print</button>
           </div>
-
         </section>
 
         <main>
@@ -48,7 +48,11 @@ function Preview(props) {
                   <div className="education" key={edu.id}>
                     <p className="education-date">
                       <strong>
-                        {(edu.fromDate.value && edu.toDate.value) ? (format(edu.fromDate.value, "dd/MMM/yyyyd") + " - " + format(edu.toDate.value, "dd/MMM/yyyy")) : null}
+                        {edu.fromDate.value && edu.toDate.value
+                          ? format(edu.fromDate.value, "dd/MMM/yyyyd") +
+                            " - " +
+                            format(edu.toDate.value, "dd/MMM/yyyy")
+                          : null}
                       </strong>
                     </p>
                     <div className="education-details">
@@ -69,15 +73,23 @@ function Preview(props) {
               <hr />
               {cv.experience.map((exp) => {
                 return (
-                  <div className="experience" key={exp.id}>
+                  <div className="experience-container" key={exp.id}>
                     <p className="experience-date">
-                    {(exp.fromDate.value && exp.toDate.value) ? (format(exp.fromDate.value, "dd/MMM/yyyy") + " - " + format(exp.toDate.value, "dd/MMM/yyyy")) : null}
-
-                      {/* {format(exp.fromDate.value, "dd/MMM/yyyy")} - {format(exp.toDate.value, "dd/MMM/yyyy")}{" "} */}
+                      <strong>
+                        {exp.fromDate.value && exp.toDate.value
+                          ? format(exp.fromDate.value, "dd/MMM/yyyy") +
+                            " - " +
+                            format(exp.toDate.value, "dd/MMM/yyyy")
+                          : null}
+                      </strong>
                     </p>
-                    <p className="experience-position">{exp.position.value}</p>
-                    <p className="experience-company">{exp.company.value}</p>
-                    <p className="experience-city">{exp.city.value}</p>
+                    <div className="experience-details">
+                      <p className="experience-position">
+                        <strong>{exp.position.value}</strong>
+                      </p>
+                      <p className="experience-company">{exp.company.value}</p>
+                      <p className="experience-city">{exp.city.value}</p>
+                    </div>
                   </div>
                 );
               })}
