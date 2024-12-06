@@ -27,20 +27,37 @@ function PersonalInformation(props) {
       <input
         type="text"
         placeholder="Photo"
-        onClick={async (event) => {
+        onClick={() => {
           const inputElement = document.querySelector("input[type='file']");
           inputElement.click();
-          // inputElement
+          inputElement.setAttribute("onChange", (event) => {
+            handleChange(() => console.log("radi jbt"));
 
-          console.log(event.target);
-          setTimeout(() => {
+            console.log(event);
+            console.log(event.target);
+            console.log(event.target.files);
+            // inputElement
             event.target.value = "Click to change photo.";
             event.target.setAttribute("tabIndex", "-1");
             event.target.setAttribute("readOnly", true);
-            console.log(event.target);
-          }, 3000);
-          // this.value = personalInfo.photo.value
+            // console.log(event.target);
+            // this.value = personalInfo.photo.value
+          });
+          console.log(inputElement);
         }}
+
+        // onChange={(event) => {
+        //   handleChange()
+        //   console.log(event);
+        //   console.log(event.target);
+        //   console.log(event.target.files);
+        //   // inputElement
+        //   event.target.value = "Click to change photo.";
+        //   event.target.setAttribute("tabIndex", "-1");
+        //   event.target.setAttribute("readOnly", true);
+        //   // console.log(event.target);
+        //   // this.value = personalInfo.photo.value
+        // }}
       />
     </div>
   );
