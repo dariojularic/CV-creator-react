@@ -11,14 +11,14 @@
 
 .container {
   position: absolute;
-  top: 50%;
+  top: 5%;
   left: 50%;
   z-index: 100;
   background-color: white;
   min-height: 800px;
   height: fit-content;
   width: 60%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
 }

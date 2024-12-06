@@ -1,7 +1,7 @@
 function addEducation() {
   return {
     universityName: {
-      value: "",
+      value: "Ime faksa",
       meta: {
         placeholder: "University Name",
         type: "text",
@@ -9,7 +9,7 @@ function addEducation() {
       }
     },
     city: {
-      value: "",
+      value: "Zagreb",
       meta: {
         placeholder: "City",
         type: "text",
@@ -17,7 +17,7 @@ function addEducation() {
       }
     },
     degree: {
-      value: "",
+      value: "Bakalar",
       meta: {
         placeholder: "Degree",
         type: "text",
@@ -25,7 +25,7 @@ function addEducation() {
       }
     },
     subject: {
-      value: "",
+      value: "Predmet",
       meta: {
         placeholder: "Subject",
         type: "text",
@@ -56,7 +56,7 @@ function addEducation() {
 function addExperience() {
   return {
     position: {
-      value: "",
+      value: "vozac",
       meta: {
         placeholder: "Position",
         type: "text",
@@ -64,7 +64,7 @@ function addExperience() {
       }
     },
     company: {
-      value: "",
+      value: "limolike",
       meta: {
         placeholder: "Company",
         type: "text",
@@ -72,7 +72,7 @@ function addExperience() {
       }
     },
     city: {
-      value: "",
+      value: "Zagreb",
       meta: {
         placeholder: "City",
         type: "text",
@@ -99,107 +99,107 @@ function addExperience() {
   }
 }
 
-const emptyEducation = {
-  universityName: {
-    value: "",
-    meta: {
-      placeholder: "University Name",
-      type: "text",
-      name: "universityName"
-    }
-  },
-  city: {
-    value: "",
-    meta: {
-      placeholder: "City",
-      type: "text",
-      name: "city"
-    }
-  },
-  degree: {
-    value: "",
-    meta: {
-      placeholder: "Degree",
-      type: "text",
-      name: "degree"
-    }
-  },
-  subject: {
-    value: "",
-    meta: {
-      placeholder: "Subject",
-      type: "text",
-      name: "subject"
-    }
-  },
-  fromDate: {
-    value: "",
-    meta: {
-      placeholder: "From",
-      type: "date",
-      name: "fromDate"
-    }
-  },
-  toDate: {
-    value: "",
-    meta: {
-      placeholder: "To",
-      type: "date",
-      name: "toDate"
-    }
-  },
-  id: crypto.randomUUID(),
-}
+// const emptyEducation = {
+//   universityName: {
+//     value: "",
+//     meta: {
+//       placeholder: "University Name",
+//       type: "text",
+//       name: "universityName"
+//     }
+//   },
+//   city: {
+//     value: "",
+//     meta: {
+//       placeholder: "City",
+//       type: "text",
+//       name: "city"
+//     }
+//   },
+//   degree: {
+//     value: "",
+//     meta: {
+//       placeholder: "Degree",
+//       type: "text",
+//       name: "degree"
+//     }
+//   },
+//   subject: {
+//     value: "",
+//     meta: {
+//       placeholder: "Subject",
+//       type: "text",
+//       name: "subject"
+//     }
+//   },
+//   fromDate: {
+//     value: "",
+//     meta: {
+//       placeholder: "From",
+//       type: "date",
+//       name: "fromDate"
+//     }
+//   },
+//   toDate: {
+//     value: "",
+//     meta: {
+//       placeholder: "To",
+//       type: "date",
+//       name: "toDate"
+//     }
+//   },
+//   id: crypto.randomUUID(),
+// }
 
 
-const emptyExperience = {
-  position: {
-    value: "",
-    meta: {
-      placeholder: "Position",
-      type: "text",
-      name: "position"
-    }
-  },
-  company: {
-    value: "",
-    meta: {
-      placeholder: "Company",
-      type: "text",
-      name: "company"
-    }
-  },
-  city: {
-    value: "",
-    meta: {
-      placeholder: "City",
-      type: "text",
-      name: "city"
-    }
-  },
-  fromDate: {
-    value: "",
-    meta: {
-      placeholder: "From",
-      type: "date",
-      name: "fromDate"
-    }
-  },
-  toDate: {
-    value: "",
-    meta: {
-      placeholder: "To",
-      type: "date",
-      name: "toDate"
-    }
-  },
-  id: crypto.randomUUID()
-}
+// const emptyExperience = {
+//   position: {
+//     value: "",
+//     meta: {
+//       placeholder: "Position",
+//       type: "text",
+//       name: "position"
+//     }
+//   },
+//   company: {
+//     value: "",
+//     meta: {
+//       placeholder: "Company",
+//       type: "text",
+//       name: "company"
+//     }
+//   },
+//   city: {
+//     value: "",
+//     meta: {
+//       placeholder: "City",
+//       type: "text",
+//       name: "city"
+//     }
+//   },
+//   fromDate: {
+//     value: "",
+//     meta: {
+//       placeholder: "From",
+//       type: "date",
+//       name: "fromDate"
+//     }
+//   },
+//   toDate: {
+//     value: "",
+//     meta: {
+//       placeholder: "To",
+//       type: "date",
+//       name: "toDate"
+//     }
+//   },
+//   id: crypto.randomUUID()
+// }
 
 const initialState = {
   personalInformation: {
     firstName: {
-      value: "",
+      value: "Dario",
       meta: {
         placeholder: "First Name",
         type: "text",
@@ -207,7 +207,7 @@ const initialState = {
       }
     },
     lastName: {
-      value: "",
+      value: "Jularic",
       meta: {
         placeholder: "Last Name",
         type: "text",
@@ -215,7 +215,7 @@ const initialState = {
       }
     },
     title: {
-      value: "",
+      value: "Dr",
       meta: {
         placeholder: "Title",
         type: "text",
@@ -231,7 +231,7 @@ const initialState = {
       }
     },
     adress: {
-      value: "",
+      value: "Quiddestr 43, Munich",
       meta: {
         placeholder: "Adress",
         type: "text",
@@ -239,7 +239,7 @@ const initialState = {
       }
     },
     phoneNumber: {
-      value: "",
+      value: "00491742173418",
       meta: {
         placeholder: "Phone Number",
         type: "text",
@@ -247,7 +247,7 @@ const initialState = {
       }
     },
     email: {
-      value: "",
+      value: "daropwjraow@gmail.com",
       meta: {
         placeholder: "Email",
         type: "text",
@@ -255,7 +255,7 @@ const initialState = {
       }
     },
     aboutMe: {
-      value: "",
+      value: "Warning: Received NaN for the `children` attribute. If this is expected, cast the value to a string. Error Component Stack Warning: Received NaN for the `children` attribute. If this is expected, cast the value to a string. Error Component Stack Warning: Received NaN for the `children` attribute. If this is expected, cast the value to a string. Error Component Stack",
       meta: {
         placeholder: "About me",
         type: "text",
@@ -279,4 +279,4 @@ const initialState = {
 //   }
 // }
 
-export { initialState, emptyEducation, emptyExperience, addEducation, addExperience };
+export { initialState, addEducation, addExperience };

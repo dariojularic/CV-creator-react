@@ -35,7 +35,7 @@ function Preview(props) {
                   <div className="education" key={edu.id}>
                     <p className="education-date">
                       <strong>
-                        {(edu.fromDate.value && edu.toDate.value) ? (format(edu.fromDate.value, "dd/MMM/yyyy") + " - " + format(edu.toDate.value, "dd/MMM/yyyy")) : ("dada")}
+                        {(edu.fromDate.value && edu.toDate.value) ? (format(edu.fromDate.value, "dd/MMM/yyyy") + " - " + format(edu.toDate.value, "dd/MMM/yyyy")) : null}
                       </strong>
                     </p>
                     <div>
@@ -58,7 +58,7 @@ function Preview(props) {
                 return (
                   <div className="experience" key={exp.id}>
                     <p className="experience-date">
-                    {(exp.fromDate.value && exp.toDate.value) ? (format(exp.fromDate.value, "dd/MMM/yyyy") - format(exp.toDate.value, "dd/MMM/yyyy")) : null}
+                    {(exp.fromDate.value && exp.toDate.value) ? (format(exp.fromDate.value, "dd/MMM/yyyy") + " - " + format(exp.toDate.value, "dd/MMM/yyyy")) : null}
 
                       {/* {format(exp.fromDate.value, "dd/MMM/yyyy")} - {format(exp.toDate.value, "dd/MMM/yyyy")}{" "} */}
                     </p>
