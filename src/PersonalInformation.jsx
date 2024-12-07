@@ -30,24 +30,22 @@ function PersonalInformation(props) {
           const inputElement = document.querySelector("input[type='file']");
           inputElement.click();
           inputElement.addEventListener("change", (event) => {
+            const file = event.target.files[0];
             const reader = new FileReader();
-            // reader.onload = () => {
-            //   // setSelectedImage(reader.result);
-            //   console.log("fafafa");
-            // };
-            console.log(event.target.files[0]);
 
-            reader.readAsDataURL(event.target.files[0]);
-
-            eventClick.target.placeholder =
-              "Image uploaded! Click to change photo";
-            eventClick.target.setAttribute("readOnly", true);
-            setCv((prev) => {
-              prev.personalInformation.photo.value = event.target.files[0];
-              prev.personalInformation.photo.meta.placeholder =
+            reader.onload = (e) => {
+              eventClick.target.placeholder =
                 "Image uploaded! Click to change photo";
-              return prev;
-            });
+              eventClick.target.setAttribute("readOnly", true);
+
+              setCv((prev) => {
+                prev.personalInformation.photo.value = e.target.result;
+                prev.personalInformation.photo.meta.placeholder =
+                  "Image uploaded! Click to change photo";
+                return prev;
+              });
+            };
+            reader.readAsDataURL(file);
           });
         }}
       />
@@ -58,6 +56,8 @@ function PersonalInformation(props) {
 PersonalInformation.propTypes = {
   personalInfo: PropTypes.object,
   handleChange: PropTypes.func,
+  cv: PropTypes.object,
+  setCv: PropTypes.func,
 };
 
 export default PersonalInformation;
