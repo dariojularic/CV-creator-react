@@ -22,18 +22,28 @@ function PersonalInformation(props) {
           />
         );
       })}
-      
+
       <input
         type="text"
         placeholder="Photo"
         onClick={(eventClick) => {
           const inputElement = document.querySelector("input[type='file']");
           inputElement.click();
-          inputElement.addEventListener("change", () => {
+          inputElement.addEventListener("change", (event) => {
+            const reader = new FileReader();
+            // reader.onload = () => {
+            //   // setSelectedImage(reader.result);
+            //   console.log("fafafa");
+            // };
+            console.log(event.target.files[0]);
+
+            reader.readAsDataURL(event.target.files[0]);
+
             eventClick.target.placeholder =
               "Image uploaded! Click to change photo";
             eventClick.target.setAttribute("readOnly", true);
             setCv((prev) => {
+              prev.personalInformation.photo.value = event.target.files[0];
               prev.personalInformation.photo.meta.placeholder =
                 "Image uploaded! Click to change photo";
               return prev;
