@@ -149,14 +149,14 @@ function Form() {
             setCv={setCv}
             cv={cv}
           />
-          {/* </div>
+        </div>
 
         <div className="education input-container">
           <h3>Education</h3>
-          <Education */}
-          handleChange={handleEducationChange}
-          education={cv.education}
-          handleDelete={handleDeleteEducation}
+          <Education
+            handleChange={handleEducationChange}
+            education={cv.education}
+            handleDelete={handleDeleteEducation}
           />
           <Button
             type="button"
