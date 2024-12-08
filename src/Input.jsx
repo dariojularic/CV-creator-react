@@ -13,10 +13,13 @@ function Input(props) {
       placeholder={placeholder}
       name={name}
       onChange={id ? (event) => handleChange(id, event) : handleChange}
+      // onFocus={(e) => {
+      //   e.target.type = "date"
+      //   console.log(e.target.type)
+      // }}
       // onCHange check type file - if true setAttribute("readOnly", true)
     />
   );
-
 
   // (event) => {
   //   handleChange(() => console.log("radi jbt"));
@@ -30,9 +33,6 @@ function Input(props) {
   //   // console.log(event.target);
   //   // this.value = personalInfo.photo.value
   // }
-
-
-
 }
 
 Input.propTypes = {
