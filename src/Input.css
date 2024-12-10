@@ -14,12 +14,12 @@ input:hover {
 input[type=date]:invalid::-webkit-datetime-edit {
   color: rgb(117, 117, 117);
 }
-
+/*
 
 input[type=date]::before {
   content: "Select a date";
   color: rgb(117, 117, 117);
-}
+} */
 
 input[type=date]:required {
   /* display: none; */
