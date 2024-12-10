@@ -26,6 +26,7 @@ function PersonalInformation(props) {
       <input
         type="text"
         placeholder="Photo"
+        name="fakeInput"
         onClick={(eventClick) => {
           const inputElement = document.querySelector("input[type='file']");
           inputElement.click();

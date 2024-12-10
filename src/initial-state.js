@@ -50,7 +50,6 @@ function addEducation() {
     },
     id: crypto.randomUUID(),
   }
-
 }
 
 function addExperience() {
@@ -98,103 +97,6 @@ function addExperience() {
     id: crypto.randomUUID()
   }
 }
-
-// const emptyEducation = {
-//   universityName: {
-//     value: "",
-//     meta: {
-//       placeholder: "University Name",
-//       type: "text",
-//       name: "universityName"
-//     }
-//   },
-//   city: {
-//     value: "",
-//     meta: {
-//       placeholder: "City",
-//       type: "text",
-//       name: "city"
-//     }
-//   },
-//   degree: {
-//     value: "",
-//     meta: {
-//       placeholder: "Degree",
-//       type: "text",
-//       name: "degree"
-//     }
-//   },
-//   subject: {
-//     value: "",
-//     meta: {
-//       placeholder: "Subject",
-//       type: "text",
-//       name: "subject"
-//     }
-//   },
-//   fromDate: {
-//     value: "",
-//     meta: {
-//       placeholder: "From",
-//       type: "date",
-//       name: "fromDate"
-//     }
-//   },
-//   toDate: {
-//     value: "",
-//     meta: {
-//       placeholder: "To",
-//       type: "date",
-//       name: "toDate"
-//     }
-//   },
-//   id: crypto.randomUUID(),
-// }
-
-
-// const emptyExperience = {
-//   position: {
-//     value: "",
-//     meta: {
-//       placeholder: "Position",
-//       type: "text",
-//       name: "position"
-//     }
-//   },
-//   company: {
-//     value: "",
-//     meta: {
-//       placeholder: "Company",
-//       type: "text",
-//       name: "company"
-//     }
-//   },
-//   city: {
-//     value: "",
-//     meta: {
-//       placeholder: "City",
-//       type: "text",
-//       name: "city"
-//     }
-//   },
-//   fromDate: {
-//     value: "",
-//     meta: {
-//       placeholder: "From",
-//       type: "date",
-//       name: "fromDate"
-//     }
-//   },
-//   toDate: {
-//     value: "",
-//     meta: {
-//       placeholder: "To",
-//       type: "date",
-//       name: "toDate"
-//     }
-//   },
-//   id: crypto.randomUUID()
-// }
 
 const initialState = {
   personalInformation: {
