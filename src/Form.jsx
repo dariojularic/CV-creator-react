@@ -133,7 +133,7 @@ function Form() {
           })}
 
           <Button
-            type="button"
+            type="buttonaction"
             value="Add Education"
             handleClick={handleAddEducation}
           />
@@ -154,7 +154,7 @@ function Form() {
 
         <div className="submit-btns">
           <Button
-            type="submit"
+            type="button-action"
             value="Preview"
             handleClick={(event) => {
               event.preventDefault();

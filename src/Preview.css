@@ -102,3 +102,14 @@ main {
 hr {
   margin: 6px 0;
 }
+
+.buttons {
+  position: absolute;
+  top: 0;
+  right: -200px;
+  /* background-color: yellow; */
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 32px; */
+}

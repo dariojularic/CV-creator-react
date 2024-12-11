@@ -1,5 +1,8 @@
-button {
+.button {
   margin-bottom: 16px;
+  /* margin-left: 16px;
+  margin-right: 16px; */
+  min-width: 80px;
   height: 40px;
   border-radius: 8px;
   border: none;
@@ -8,10 +11,26 @@ button {
   font-weight: 600;
   font-size: 20px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.1s;
 }
 
 button:hover {
   background-color: #343a40;
-  transition: background-color 0.3s;
+  transition: background-color 0.1s;
+}
+
+.button-cancel, .reset {
+  background-color: rgb(202, 25, 25);
+}
+
+.button-cancel:hover, .reset:hover {
+  background-color: rgb(177, 9, 9);
+}
+
+.button-action {
+  background-color: rgb(16, 164, 16);
+}
+
+.button-action:hover {
+  background-color: rgb(6, 125, 6);
 }

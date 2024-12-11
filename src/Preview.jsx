@@ -1,10 +1,18 @@
 import "./Preview.css";
 import ReactDom from "react-dom";
 import { format } from "date-fns";
+import Button from "./Button";
 
 function Preview(props) {
   const { cv, setPreview } = props;
 
+  function handleClickBackButton() {
+    setPreview(false)
+  }
+
+  function handleClickPrintButton() {
+    window.print()
+  }
 
   // const baseClass = "button"
   // const modifierClass = props.type === "action" ? "button-action" : "button-cancel"
@@ -31,8 +39,10 @@ function Preview(props) {
 
           <div className="buttons">
             {/* koristit button komponentu, ako ne primi prop, neka ostane sivi */}
-            <button onClick={() => setPreview(false)}>Back</button>
-            <button onClick={() => window.print()}>Print</button>
+            <Button handleClick={handleClickBackButton} value="Back" type="button-cancel" />
+            <Button handleClick={handleClickPrintButton} value="Print" type="button-action"/>
+            {/* <button onClick={() => setPreview(false)}>Back</button>
+            <button onClick={() => window.print()}>Print</button> */}
           </div>
         </section>
 
