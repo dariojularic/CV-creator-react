@@ -92,7 +92,6 @@ function Form() {
         }),
       };
     });
-    // console.log(cv);
   }
 
   function handleAddEducation() {
@@ -100,7 +99,6 @@ function Form() {
       ...prev,
       education: [...prev.education, addEducation()],
     }));
-    // console.log(cv);
   }
 
   function handleAddExperience() {
@@ -108,7 +106,6 @@ function Form() {
       ...prev,
       experience: [...prev.experience, addExperience()],
     }));
-    // console.log(cv);
   }
 
   function handleDeleteEducation(id) {
@@ -136,15 +133,11 @@ function Form() {
 
   return (
     <>
-      {/* {!preview ? ( */}
       <form className="form" action="">
         <div className="personal-information input-container">
           <h3>Personal Information</h3>
           <PersonalInformation
             personalInfo={cv.personalInformation}
-            // personalInfo={() => {
-            //   console.log(cv.personalInformation)
-            // } }
             handleChange={handlePersonalInfoChange}
             setCv={setCv}
             cv={cv}
@@ -193,9 +186,6 @@ function Form() {
           <Button type="reset" value="Reset" handleClick={resetCv} />
         </div>
       </form>
-      {/* // ) : (
-      //   <Preview cv={cv} setPreview={setPreview} />
-      // )} */}
 
       {preview && <Preview cv={cv} setPreview={setPreview} />}
     </>

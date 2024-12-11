@@ -3,7 +3,7 @@ input {
   border-radius: 8px;
   border: none;
   margin-bottom: 16px;
-  padding-left: 8px;
+  padding: 4px;
   font-size: 20px;
 }
 
@@ -13,23 +13,28 @@ input:hover {
 
 input[type=date]:invalid::-webkit-datetime-edit {
   color: rgb(117, 117, 117);
+
 }
 
+input[type="date"]:before {
+  content: attr(placeholder) !important;
+  color: #aaa;
+  margin-bottom: 40px;
+}
+input[type="date"]:focus:before,
+input[type="date"]:valid:before {
+  content: "";
+}
+
+/* input[type=date]::-webkit-input-placeholder::before {
+  content: "gaag";
+}
 
 input[type=date]::before {
   content: "Select a date";
   color: rgb(117, 117, 117);
 }
 
-input[type=date]:required {
-  /* display: none; */
-}
-
-
-#shadow-root {
-
-}
-
-/* input::-internal-datetime-container {
-
+input[type=date]::placeholder {
+  content: none;
 } */
