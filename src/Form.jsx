@@ -42,7 +42,6 @@ function Form() {
         },
       };
     });
-    // console.log(cv);
   }
 
   function handleEducationChange(id, event) {
@@ -68,7 +67,6 @@ function Form() {
         }),
       };
     });
-    // console.log(cv);
   }
 
   function handleExperienceChange(id, event) {
