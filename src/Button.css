@@ -3,13 +3,15 @@ button {
   height: 40px;
   border-radius: 8px;
   border: none;
-  background-color: #343a40;
+  background-color: #343a40e6;
   color: white;
   font-weight: 600;
   font-size: 20px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-
+  background-color: #343a40;
+  transition: background-color 0.3s;
 }
