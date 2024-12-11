@@ -5,6 +5,11 @@ import { format } from "date-fns";
 function Preview(props) {
   const { cv, setPreview } = props;
 
+
+  // const baseClass = "button"
+  // const modifierClass = props.type === "action" ? "button-action" : "button-cancel"
+  // <button className={`button ${modifierClass}`} ></button>
+
   return ReactDom.createPortal(
     <>
       <div
@@ -25,6 +30,7 @@ function Preview(props) {
           </div>
 
           <div className="buttons">
+            {/* koristit button komponentu, ako ne primi prop, neka ostane sivi */}
             <button onClick={() => setPreview(false)}>Back</button>
             <button onClick={() => window.print()}>Print</button>
           </div>

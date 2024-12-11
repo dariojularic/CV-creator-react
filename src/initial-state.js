@@ -35,7 +35,7 @@ function addEducation() {
     fromDate: {
       value: "",
       meta: {
-        placeholder: "*Start date",
+        placeholder: "Start date",
         type: "date",
         name: "fromDate"
       }
@@ -43,7 +43,7 @@ function addEducation() {
     toDate: {
       value: "",
       meta: {
-        placeholder: "*End date",
+        placeholder: "End date",
         type: "date",
         name: "toDate"
       }
@@ -81,7 +81,7 @@ function addExperience() {
     fromDate: {
       value: "",
       meta: {
-        placeholder: "*Start date",
+        placeholder: "Start date",
         type: "date",
         name: "fromDate"
       }
@@ -89,7 +89,7 @@ function addExperience() {
     toDate: {
       value: "",
       meta: {
-        placeholder: "*End date",
+        placeholder: "End date",
         type: "date",
         name: "toDate"
       }

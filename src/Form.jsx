@@ -114,15 +114,6 @@ function Form() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function checkRequiredInputs() {
-    const allDateInputs = document.querySelectorAll("input[type='date']");
-    const arr = [];
-    allDateInputs.forEach((input) => {
-      arr.push(input.checkValidity());
-    });
-    return arr.every((elem) => elem === true);
-  }
-
   return (
     <>
       <form className="form" action="">
@@ -137,11 +128,10 @@ function Form() {
 
         <div className="education input-container">
           <h3>Education</h3>
-          <Education
-            handleChange={handleEducationChange}
-            education={cv.education}
-            handleDelete={handleDeleteEducation}
-          />
+          {cv.education.map(edu => {
+            return <Education key={edu.id} {...edu} handleChange={handleEducationChange} handleDelete={handleDeleteEducation} />
+          })}
+
           <Button
             type="button"
             value="Add Education"
@@ -151,11 +141,9 @@ function Form() {
 
         <div className="experience-form input-container">
           <h3>Experience</h3>
-          <Experience
-            handleChange={handleExperienceChange}
-            experience={cv.experience}
-            handleDelete={handleDeleteExperience}
-          />
+          {cv.experience.map((exp) => {
+            return <Experience key={exp.id} {...exp} handleChange={handleExperienceChange} handleDelete={handleDeleteExperience} />;
+          })}
 
           <Button
             type="button"
@@ -170,10 +158,6 @@ function Form() {
             value="Preview"
             handleClick={(event) => {
               event.preventDefault();
-              if (!checkRequiredInputs()) {
-                alert("Please fill out the fields that have *")
-                return;
-              }
               window.scrollTo({ top: 0, behavior: "smooth" });
               setPreview(true);
             }}

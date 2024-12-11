@@ -1,39 +1,52 @@
 import Button from "./Button";
 import Input from "./Input";
 import "./Education.css";
+import PropTypes from "prop-types";
 
 function Education(props) {
-  const { handleDelete, handleChange, education } = props;
-  return education.map((edu) => {
-    const fields = Object.entries(edu).map(([key, value]) => {
-      return { [key]: value };
-    });
+  const {
+    handleDelete,
+    handleChange,
+    id,
+    universityName,
+    city,
+    degree,
+    subject,
+    fromDate,
+    toDate,
+  } = props;
+  const keys = [universityName, city, degree, subject, fromDate, toDate];
 
-    return (
-      <section className="education-section" key={edu.id}>
-        {fields.map((field) => {
-          const key = Object.keys(field);
-          if (key[0] === "id") return null;
-          return (
-            <Input
-              key={field[key].meta.name}
-              type={field[key].meta.type}
-              placeholder={field[key].meta.placeholder}
-              name={field[key].meta.name}
-              handleChange={handleChange}
-              id={edu.id}
-            />
-          );
-        })}
-        <Button
-          id={edu.id}
-          type="button"
-          value="Delete"
-          handleClick={handleDelete}
-        />
-      </section>
-    );
-  });
+  return (
+    <div className="education-section" key={id}>
+      {keys.map((key) => {
+        return (
+          <Input
+            key={key.meta.name}
+            placeholder={key.meta.placeholder}
+            type={key.meta.type}
+            name={key.meta.name}
+            id={id}
+            handleChange={handleChange}
+          />
+        );
+      })}
+
+      <Button id={id} type="button" value="Delete" handleClick={handleDelete} />
+    </div>
+  );
 }
+
+Education.propTypes = {
+  handleChange: PropTypes.func,
+  handleDelete: PropTypes.func,
+  universityName: PropTypes.object,
+  city: PropTypes.object,
+  degree: PropTypes.object,
+  subject: PropTypes.object,
+  fromDate: PropTypes.object,
+  toDate: PropTypes.object,
+  id: PropTypes.string,
+};
 
 export default Education;
