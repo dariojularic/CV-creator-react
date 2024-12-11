@@ -3,7 +3,6 @@ import "./Experience.css";
 import Button from "./Button";
 import PropTypes from "prop-types";
 
-// refaktorirat
 function Experience(props) {
   const {
     handleDelete,

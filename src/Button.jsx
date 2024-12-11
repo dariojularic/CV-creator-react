@@ -5,7 +5,11 @@ function Button(props) {
   const { id, type, value, handleClick } = props;
 
   return (
-    <button className={`button ${type}`} type={type} onClick={id ? () => handleClick(id) : handleClick}>
+    <button
+      className={`button ${type}`}
+      type={type}
+      onClick={id ? () => handleClick(id) : handleClick}
+    >
       {value}
     </button>
   );
