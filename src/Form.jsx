@@ -11,7 +11,7 @@ import { useState } from "react";
 // x na click preview da se pojavi preview componenta
 // x ubacit skrol na preview (window.scrollTo)
 // x dodat back button
-// photo type = file hidden tako da se clickom na <p> aktivira <input>
+// x photo type = file hidden tako da se clickom na <p> aktivira <input>
 // dodat print button
 
 // components

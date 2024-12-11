@@ -48,7 +48,6 @@
 
 main {
   display: flex;
-  /* height: 100%; */
   flex-grow: 2;
 }
 
@@ -78,18 +77,15 @@ main {
 
 .right-side {
   background-color: rgb(227, 227, 227);
-  /* height: 100%; */
   width: 30%;
 }
 
 .personal-details {
   padding: 0 12px;
-
 }
 
 .image-container {
-  height: 240px;
-
+  height: 280px;
 }
 
 .cv-image {

@@ -26,6 +26,10 @@ input[type="date"]:valid:before {
   content: "";
 }
 
+.fake-input::placeholder {
+  color: black;
+}
+
 /* input[type=date]::-webkit-input-placeholder::before {
   content: "gaag";
 }

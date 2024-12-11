@@ -26,7 +26,7 @@ function Preview(props) {
 
           <div className="buttons">
             <button onClick={() => setPreview(false)}>Back</button>
-            <button>Print</button>
+            <button onClick={() => window.print()}>Print</button>
           </div>
         </section>
 

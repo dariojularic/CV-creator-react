@@ -38,6 +38,7 @@ function PersonalInformation(props) {
               eventClick.target.placeholder =
                 "Image uploaded! Click to change photo";
               eventClick.target.setAttribute("readOnly", true);
+              eventClick.target.className = "fake-input";
 
               setCv((prev) => {
                 prev.personalInformation.photo.value = e.target.result;
