@@ -13,7 +13,6 @@ input:hover {
 
 input[type=date]:invalid::-webkit-datetime-edit {
   color: rgb(117, 117, 117);
-
 }
 
 input[type="date"]:before {
@@ -21,24 +20,7 @@ input[type="date"]:before {
   color: #aaa;
   margin-bottom: 40px;
 }
-input[type="date"]:focus:before,
-input[type="date"]:valid:before {
-  content: "";
-}
 
 .fake-input::placeholder {
   color: black;
 }
-
-/* input[type=date]::-webkit-input-placeholder::before {
-  content: "gaag";
-}
-
-input[type=date]::before {
-  content: "Select a date";
-  color: rgb(117, 117, 117);
-}
-
-input[type=date]::placeholder {
-  content: none;
-} */

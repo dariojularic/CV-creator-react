@@ -1,7 +1,7 @@
 function addEducation() {
   return {
     universityName: {
-      value: "Ime faksa",
+      value: "",
       meta: {
         placeholder: "University Name",
         type: "text",
@@ -9,7 +9,7 @@ function addEducation() {
       }
     },
     city: {
-      value: "Zagreb",
+      value: "",
       meta: {
         placeholder: "City",
         type: "text",
@@ -17,7 +17,7 @@ function addEducation() {
       }
     },
     degree: {
-      value: "Bakalar",
+      value: "",
       meta: {
         placeholder: "Degree",
         type: "text",
@@ -25,7 +25,7 @@ function addEducation() {
       }
     },
     subject: {
-      value: "Predmet",
+      value: "",
       meta: {
         placeholder: "Subject",
         type: "text",
@@ -35,7 +35,7 @@ function addEducation() {
     fromDate: {
       value: "",
       meta: {
-        placeholder: "Start date",
+        placeholder: "*Start date",
         type: "date",
         name: "fromDate"
       }
@@ -43,7 +43,7 @@ function addEducation() {
     toDate: {
       value: "",
       meta: {
-        placeholder: "End date",
+        placeholder: "*End date",
         type: "date",
         name: "toDate"
       }
@@ -55,7 +55,7 @@ function addEducation() {
 function addExperience() {
   return {
     position: {
-      value: "vozac",
+      value: "",
       meta: {
         placeholder: "Position",
         type: "text",
@@ -63,7 +63,7 @@ function addExperience() {
       }
     },
     company: {
-      value: "limolike",
+      value: "",
       meta: {
         placeholder: "Company",
         type: "text",
@@ -71,7 +71,7 @@ function addExperience() {
       }
     },
     city: {
-      value: "Zagreb",
+      value: "",
       meta: {
         placeholder: "City",
         type: "text",
@@ -81,7 +81,7 @@ function addExperience() {
     fromDate: {
       value: "",
       meta: {
-        placeholder: "Start date",
+        placeholder: "*Start date",
         type: "date",
         name: "fromDate"
       }
@@ -89,7 +89,7 @@ function addExperience() {
     toDate: {
       value: "",
       meta: {
-        placeholder: "End date",
+        placeholder: "*End date",
         type: "date",
         name: "toDate"
       }
@@ -101,7 +101,7 @@ function addExperience() {
 const initialState = {
   personalInformation: {
     firstName: {
-      value: "Dario",
+      value: "",
       meta: {
         placeholder: "First Name",
         type: "text",
@@ -109,7 +109,7 @@ const initialState = {
       }
     },
     lastName: {
-      value: "Jularic",
+      value: "",
       meta: {
         placeholder: "Last Name",
         type: "text",
@@ -117,7 +117,7 @@ const initialState = {
       }
     },
     title: {
-      value: "Dr",
+      value: "",
       meta: {
         placeholder: "Title",
         type: "text",
@@ -133,7 +133,7 @@ const initialState = {
       }
     },
     adress: {
-      value: "Quiddestr 43, Munich",
+      value: "",
       meta: {
         placeholder: "Adress",
         type: "text",
@@ -141,7 +141,7 @@ const initialState = {
       }
     },
     phoneNumber: {
-      value: "00491742173418",
+      value: "",
       meta: {
         placeholder: "Phone Number",
         type: "text",
@@ -149,7 +149,7 @@ const initialState = {
       }
     },
     email: {
-      value: "daropwjraow@gmail.com",
+      value: "",
       meta: {
         placeholder: "Email",
         type: "text",
@@ -157,7 +157,7 @@ const initialState = {
       }
     },
     aboutMe: {
-      value: "Warning: Received NaN for the `children` attribute. If this is expected, cast the value to a string. Error Component Stack Warning: Received NaN for the `children` attribute. If this is expected, cast the value to a string. Error Component Stack Warning: Received NaN for the `children` attribute. If this is expected, cast the value to a string. Error Component Stack",
+      value: "",
       meta: {
         placeholder: "About me",
         type: "text",
@@ -172,13 +172,5 @@ const initialState = {
     addExperience(),
   ]
 }
-
-// const newInitialState = {
-//   ...initialState,
-//   personalInformation: {
-//     ...initialState.personalInformation,
-//     firstName: "Dario"
-//   }
-// }
 
 export { initialState, addEducation, addExperience };

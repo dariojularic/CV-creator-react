@@ -4,7 +4,7 @@ import { format } from "date-fns";
 
 function Preview(props) {
   const { cv, setPreview } = props;
-  // console.log(cv);
+
   return ReactDom.createPortal(
     <>
       <div
@@ -43,7 +43,6 @@ function Preview(props) {
               <h3 className="cv-heading">Education</h3>
               <hr />
               {cv.education.map((edu) => {
-                // console.log("edu", edu)
                 return (
                   <div className="education" key={edu.id}>
                     <p className="education-date">
@@ -101,15 +100,14 @@ function Preview(props) {
               <img
                 className="cv-image"
                 src={cv.personalInformation.photo.value}
-                alt=""
+                alt="Image for CV"
               />
             </div>
             <div className="personal-details">
               <h3 className="cv-heading">Perosnal Details</h3>
               <hr />
               <p>
-                {" "}
-                <strong> Adress </strong>
+                <strong>Adress</strong>
               </p>
               <p>{cv.personalInformation.adress.value}</p>
               <p>

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Input from "./Input";
 
 function PersonalInformation(props) {
-  const { setCv, cv, personalInfo, handleChange } = props;
+  const { setCv, personalInfo, handleChange } = props;
 
   const fields = Object.entries(personalInfo).map(([key, value]) => {
     return { [key]: value };
@@ -58,7 +58,6 @@ function PersonalInformation(props) {
 PersonalInformation.propTypes = {
   personalInfo: PropTypes.object,
   handleChange: PropTypes.func,
-  cv: PropTypes.object,
   setCv: PropTypes.func,
 };
 

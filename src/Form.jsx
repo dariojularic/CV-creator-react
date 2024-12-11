@@ -8,21 +8,6 @@ import PersonalInformation from "./PersonalInformation";
 import { initialState, addEducation, addExperience } from "./initial-state";
 import { useState } from "react";
 
-// x na click preview da se pojavi preview componenta
-// x ubacit skrol na preview (window.scrollTo)
-// x dodat back button
-// x photo type = file hidden tako da se clickom na <p> aktivira <input>
-// dodat print button
-
-// components
-//    PersonalInfo(folder)
-//      Index.jsx
-//      NekaKomponenta.jsx
-//      Index.css
-//    Education(folder)
-//      Index.jsx
-//      NekaKOmpo.jsx
-
 function Form() {
   const [cv, setCv] = useState(initialState);
   const [preview, setPreview] = useState(false);
@@ -129,6 +114,15 @@ function Form() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  function checkRequiredInputs() {
+    const allDateInputs = document.querySelectorAll("input[type='date']");
+    const arr = [];
+    allDateInputs.forEach((input) => {
+      arr.push(input.checkValidity());
+    });
+    return arr.every((elem) => elem === true);
+  }
+
   return (
     <>
       <form className="form" action="">
@@ -138,7 +132,6 @@ function Form() {
             personalInfo={cv.personalInformation}
             handleChange={handlePersonalInfoChange}
             setCv={setCv}
-            cv={cv}
           />
         </div>
 
@@ -177,6 +170,10 @@ function Form() {
             value="Preview"
             handleClick={(event) => {
               event.preventDefault();
+              if (!checkRequiredInputs()) {
+                alert("Please fill out the fields that have *")
+                return;
+              }
               window.scrollTo({ top: 0, behavior: "smooth" });
               setPreview(true);
             }}

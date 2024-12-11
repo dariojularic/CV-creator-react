@@ -1,10 +1,9 @@
 import "./Input.css";
 import PropTypes from "prop-types";
 
-// type, id, name, required, minlegth, maxlength, size, placeholder, autocapitalize
 function Input(props) {
   const { id, type, placeholder, name, handleChange } = props;
-  
+
   return (
     <input
       required={type === "date"}
