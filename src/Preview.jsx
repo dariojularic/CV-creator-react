@@ -99,7 +99,7 @@ function Preview(props) {
             <div className="image-container">
               <img
                 className="cv-image"
-                src={cv.personalInformation.photo.value}
+                src={`assets/Images/${cv.personalInformation.photo.value}`}
                 alt="Image for CV"
               />
             </div>
