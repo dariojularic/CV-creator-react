@@ -31,7 +31,7 @@ function Experience(props) {
         );
       })}
 
-      <Button id={id} type="delete" value="Delete" handleClick={handleDelete} />
+      <Button id={id} type="button" value="Delete" handleClick={handleDelete} />
     </div>
   );
 }

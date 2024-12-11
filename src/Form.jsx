@@ -128,12 +128,19 @@ function Form() {
 
         <div className="education input-container">
           <h3>Education</h3>
-          {cv.education.map(edu => {
-            return <Education key={edu.id} {...edu} handleChange={handleEducationChange} handleDelete={handleDeleteEducation} />
+          {cv.education.map((edu) => {
+            return (
+              <Education
+                key={edu.id}
+                {...edu}
+                handleChange={handleEducationChange}
+                handleDelete={handleDeleteEducation}
+              />
+            );
           })}
 
           <Button
-            type="buttonaction"
+            type="button"
             value="Add Education"
             handleClick={handleAddEducation}
           />
@@ -142,7 +149,14 @@ function Form() {
         <div className="experience-form input-container">
           <h3>Experience</h3>
           {cv.experience.map((exp) => {
-            return <Experience key={exp.id} {...exp} handleChange={handleExperienceChange} handleDelete={handleDeleteExperience} />;
+            return (
+              <Experience
+                key={exp.id}
+                {...exp}
+                handleChange={handleExperienceChange}
+                handleDelete={handleDeleteExperience}
+              />
+            );
           })}
 
           <Button
